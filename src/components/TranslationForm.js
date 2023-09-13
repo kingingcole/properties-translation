@@ -18,8 +18,18 @@ const TranslationForm = () => {
   const [progress, setProgress] = useState(0)
 
   const handleFileChange = (e) => {
+    setErrorMessage('')
+    setEnglishFile(null)
+
     const file = e.target.files[0]
-    setEnglishFile(file)
+
+    // Check if the selected file has the correct file extension
+    if (file && file.name.endsWith('.properties')) {
+      setEnglishFile(file)
+    } else {
+      // Show an error message or perform other handling for invalid file types
+      setErrorMessage('Please select a .properties file.')
+    }
   }
 
   const handleLanguageChange = (e) => {
@@ -55,7 +65,7 @@ const TranslationForm = () => {
           translatedContent[key] = translatedText
         }),
       )
-      setProgress(progress => progress + (100 / targetLanguages.length));
+      setProgress((progress) => progress + 100 / targetLanguages.length)
       return { languageCode, content: translatedContent }
     })
 
@@ -83,7 +93,7 @@ const TranslationForm = () => {
     }
   }
 
-  const btnDisabled = !englishFile || !targetLanguages.length || isTranslating;
+  const btnDisabled = !englishFile || !targetLanguages.length || isTranslating
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-96 mx-auto mt-8">
@@ -140,7 +150,9 @@ const TranslationForm = () => {
             {errorMessage}
           </small>
         )}
-        {((isTranslating || progress > 0) && !errorMessage.length) && <ProgressBar progress={progress} />}
+        {(isTranslating || progress > 0) && !errorMessage.length && (
+          <ProgressBar progress={progress} />
+        )}
       </form>
     </div>
   )

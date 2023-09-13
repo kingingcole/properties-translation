@@ -55,12 +55,13 @@ const TranslationForm = () => {
 
     const translationPromises = targetLanguages.map(async (languageCode) => {
       let translatedContent = {}
+      const language = supportedLanguages.find(lang => lang.code == languageCode);
 
       await Promise.all(
         Object.keys(englishContent).map(async (key) => {
           const translatedText = await translateWithChatGPT(
             englishContent[key],
-            languageCode,
+            language.name,
           )
           translatedContent[key] = translatedText
         }),

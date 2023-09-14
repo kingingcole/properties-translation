@@ -411,16 +411,18 @@ const TranslationForm = () => {
               English file
             </li>
             <li className="my-2">
-              <code>{'{languageCode}'}</code>: Language code of the newly
-              translated file (e.g., 'es', 'pl')
+              <code>{'&apos;languageCode&apos;'}</code>: Language code of the
+              newly translated file (e.g., &apos;es&apos;, &apos;pl&apos;)
             </li>
             <li className="my-2">
-              <code>{'{lang}'}</code>: Full lowercase language text of the newly
-              translated file (e.g., 'spanish', 'polish')
+              <code>{'&apos;lang&apos;'}</code>: Full lowercase language text of
+              the newly translated file (e.g., &apos;spanish&apos;,
+              &apos;polish&apos;)
             </li>
             <li className="my-2">
-              <code>{'{Lang}'}</code>: Full capitalized language text of the
-              newly translated file (e.g., 'Spanish', 'French')
+              <code>{'&apos;Lang&apos;'}</code>: Full capitalized language text
+              of the newly translated file (e.g., &apos;Spanish&apos;,
+              &apos;French&apos;)
             </li>
           </ul>
         </div>

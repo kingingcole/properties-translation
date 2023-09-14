@@ -280,9 +280,10 @@ const TranslationForm = () => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-screen-sm mx-auto my-8">
-      <h1 className="text-2xl font-semibold mb-4 text-center">
-        AI File Translation
-      </h1>
+      <div className="mb-5">
+        <h1 className="text-2xl text-gray-700 font-semibold mb-4 text-center mb-0">Localization File AI Translator</h1>
+        <h5 className="w-full text-sm text-gray-700 text-center">Translate localization files to multiple languages</h5>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label

@@ -6,11 +6,16 @@ import {
   TOTAL_KEYS_COUNT_WARNING,
   countKeysWithStrings,
   createZipFile,
+  generateTranslatedFileName,
   readAndParseEnglishFile,
   supportedLanguages,
   translateWithChatGPT,
+  validateNamingPattern,
 } from '@/utils'
 import { useEffect, useState } from 'react'
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+
+import AdvancedOptionsButton from './AdvancedOptionsButton'
 import ProgressBar from './ProgressBar'
 
 const TranslationForm = () => {
@@ -24,6 +29,11 @@ const TranslationForm = () => {
   const [fileType, setFileType] = useState('')
   const [totalKeysCount, setTotalKeysCount] = useState(0)
   const [showAllLanguages, setShowAllLanguages] = useState(false)
+
+  const [isAdvancedOptionsVisible, setAdvancedOptionsVisible] = useState(false)
+  const [namingPattern, setNamingPattern] = useState(
+    '{originalFileName}_{languageCode}',
+  )
 
   const cleanUp = () => {
     setEnglishFile(null)
@@ -52,13 +62,11 @@ const TranslationForm = () => {
 
     setEnglishFile(file)
 
-    // Check if the selected file has the correct file extension
     if (file.name.endsWith('.properties')) {
       setFileType('properties')
     } else if (file && file.name.endsWith('.json')) {
       setFileType('json')
     } else {
-      // Show an error message or perform other handling for invalid file types
       setErrorMessage(
         'Unsupported file type. Please select a .properties or .json file.',
       )
@@ -68,12 +76,10 @@ const TranslationForm = () => {
   const handleLanguageChange = (e) => {
     const selectedLanguage = e.target.value
     if (targetLanguages.includes(selectedLanguage)) {
-      // Remove the language if it's already selected
       setTargetLanguages(
         targetLanguages.filter((lang) => lang !== selectedLanguage),
       )
     } else {
-      // Add the language if it's not already selected
       setTargetLanguages([...targetLanguages, selectedLanguage])
     }
   }
@@ -87,7 +93,7 @@ const TranslationForm = () => {
 
     const translationPromises = targetLanguages.map(async (languageCode) => {
       const language = supportedLanguages.find(
-        (lang) => lang.code == languageCode,
+        (lang) => lang.code === languageCode,
       )
 
       const translatedContent = await translateJson(
@@ -103,8 +109,12 @@ const TranslationForm = () => {
         translations.forEach((translation) => {
           translatedFilesObject[translation.languageCode] = translation.content
         })
-        // setTranslations(translatedFilesObject);
-        createZipFile(translatedFilesObject, 'json', englishFile.name)
+        createZipFile(
+          translatedFilesObject,
+          'json',
+          englishFile.name,
+          namingPattern,
+        )
         setIsTranslating(false)
       })
       .catch((error) => {
@@ -122,7 +132,6 @@ const TranslationForm = () => {
 
     // Determine if it's an array or an object
     const isArray = Array.isArray(json)
-
     const translatedData = isArray ? [] : {}
 
     // Iterate through the keys or indices in the JSON object or array
@@ -134,7 +143,6 @@ const TranslationForm = () => {
           // If the value is an object, recursively translate it
           translatedData[key] = await translateJson(value, languageName)
         } else {
-          // Translate the value using your translation function
           translatedData[key] = await translateWithChatGPT(value, languageName)
           setProgress((progress) => progress + 100 / totalKeysCount)
         }
@@ -158,7 +166,7 @@ const TranslationForm = () => {
     const translationPromises = targetLanguages.map(async (languageCode) => {
       let translatedContent = {}
       const language = supportedLanguages.find(
-        (lang) => lang.code == languageCode,
+        (lang) => lang.code === languageCode,
       )
 
       await Promise.all(
@@ -180,8 +188,12 @@ const TranslationForm = () => {
         translations.forEach((translation) => {
           translatedFilesObject[translation.languageCode] = translation.content
         })
-        // setTranslations(translatedFilesObject);
-        createZipFile(translatedFilesObject, 'properties', englishFile.name)
+        createZipFile(
+          translatedFilesObject,
+          'properties',
+          englishFile.name,
+          namingPattern,
+        )
         setIsTranslating(false)
       })
       .catch((error) => {
@@ -196,11 +208,15 @@ const TranslationForm = () => {
       return
     }
 
-    if (fileType == 'properties') {
+    if (fileType === 'properties') {
       translateAndDownloadProperties()
     } else {
       translateAndDownloadJSON()
     }
+  }
+
+  const toggleAdvancedOptions = () => {
+    setAdvancedOptionsVisible(!isAdvancedOptionsVisible)
   }
 
   useEffect(() => {
@@ -238,11 +254,29 @@ const TranslationForm = () => {
     return null
   }
 
+  const { isValid: isValidNamingPattern, reason = '' } = validateNamingPattern(
+    namingPattern.trim(),
+  )
+  const getSampleValidFileName = () => {
+    if (isValidNamingPattern) {
+      const sampleLanguageCode =
+        targetLanguages[0] || supportedLanguages[0].code
+      return `For e.g ${generateTranslatedFileName(
+        englishFile?.name || 'sample.json',
+        sampleLanguageCode,
+        namingPattern,
+      )}`
+    }
+
+    return ''
+  }
+
   const btnDisabled =
     !englishFile ||
     !targetLanguages.length ||
     isTranslating ||
-    totalKeysCount > TOTAL_KEYS_COUNT_LIMIT
+    totalKeysCount > TOTAL_KEYS_COUNT_LIMIT ||
+    !isValidNamingPattern
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-screen-sm mx-auto my-8">
@@ -288,7 +322,7 @@ const TranslationForm = () => {
           ))}
           {supportedLanguages.length > MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT && (
             <button
-              type='button'
+              type="button"
               onClick={toggleShowAllLanguages}
               className="text-sm text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-2"
             >
@@ -296,6 +330,58 @@ const TranslationForm = () => {
             </button>
           )}
         </div>
+        <AdvancedOptionsButton
+          isVisible={isAdvancedOptionsVisible}
+          toggleAdvancedOptions={toggleAdvancedOptions}
+        />
+
+        {isAdvancedOptionsVisible && (
+          <div className="mb-4">
+            <label className="text-sm font-medium text-gray-700 flex">
+              <span>Naming Pattern for New Translated Files</span>
+              <span
+                className="ml-2 text-gray-700"
+                data-tip="Naming Pattern Help"
+                data-tooltip-id="naming-pattern-tooltip"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-700 cursor-pointer"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 16v-4M12 8h.01"
+                  />
+                </svg>
+              </span>
+            </label>
+            <div className="flex items-center mt-2">
+              <input
+                type="text"
+                className="mt-1 px-4 py-2 w-full rounded-lg border focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-600"
+                placeholder="Enter naming pattern"
+                value={namingPattern}
+                onChange={(e) => setNamingPattern(e.target.value)}
+              />
+              <input
+                type="text"
+                className="mt-1 ml-2 px-4 py-2 rounded-lg text-sm text-gray-600 bg-gray-100 w-28 cursor-not-allowed"
+                value={fileType && `.${fileType}`}
+                disabled
+              />
+            </div>
+            {!isValidNamingPattern && (
+              <small className="text-red-500">{reason}</small>
+            )}
+            <small>{getSampleValidFileName()}</small>
+          </div>
+        )}
         {getKeysCountLimitMessage()}
         <button
           type="submit"
@@ -315,6 +401,30 @@ const TranslationForm = () => {
           <ProgressBar progress={progress} />
         )}
       </form>
+      {/* Tooltip for naming pattern help */}
+      <ReactTooltip id="naming-pattern-tooltip">
+        <div style={{ maxWidth: '450px' }}>
+          <div></div>
+          <ul>
+            <li className="my-2">
+              <code>{'{originalFileName}'}</code>: File name of the submitted
+              English file
+            </li>
+            <li className="my-2">
+              <code>{'{languageCode}'}</code>: Language code of the newly
+              translated file (e.g., 'es', 'pl')
+            </li>
+            <li className="my-2">
+              <code>{'{lang}'}</code>: Full lowercase language text of the newly
+              translated file (e.g., 'spanish', 'polish')
+            </li>
+            <li className="my-2">
+              <code>{'{Lang}'}</code>: Full capitalized language text of the
+              newly translated file (e.g., 'Spanish', 'French')
+            </li>
+          </ul>
+        </div>
+      </ReactTooltip>
     </div>
   )
 }

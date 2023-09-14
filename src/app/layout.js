@@ -1,13 +1,13 @@
-import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
+import { Inter } from 'next/font/google';
 
-import './globals.css'
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Property File Translation',
-  description: 'Generate translations for properties file using ChatGPT',
+  title: 'AI File Translation',
+  description: 'Generate translations for .properties and JSON files using ChatGPT',
 }
 
 export default function RootLayout({ children }) {

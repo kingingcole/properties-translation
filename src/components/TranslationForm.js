@@ -281,7 +281,7 @@ const TranslationForm = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-screen-sm mx-auto my-8">
       <h1 className="text-2xl font-semibold mb-4 text-center">
-        Property File Translation
+        AI File Translation
       </h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

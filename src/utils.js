@@ -36,7 +36,7 @@ export async function readAndParseEnglishFile(englishFile, type) {
 
 export async function translateWithChatGPT(text, targetLanguage) {
   const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-3.5-turbo-16k',
     messages: [
       {
         role: 'user',
@@ -105,6 +105,26 @@ function generateTranslatedFileName(originalFileName, languageCode) {
   return translatedFileName;
 }
 
+// function to get the total number of values to translate in the English file
+export function countKeysWithStrings(obj) {
+  let count = 0;
+
+  // Iterate over the keys in the object
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      // Check if the value associated with the key is a string
+      if (typeof obj[key] === 'string') {
+        count++; // Increment the count for each string value
+      } else if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+        // If the value is an object, recursively count its keys
+        count += countKeysWithStrings(obj[key]);
+      }
+    }
+  }
+
+  return count;
+}
+
 // Define the supported languages
 export const supportedLanguages = [
   { code: 'es', name: 'Spanish' },
@@ -113,3 +133,6 @@ export const supportedLanguages = [
   { code: 'pl', name: 'Polish' },
   // Add more languages here in the same format if needed
 ]
+
+export const TOTAL_KEYS_COUNT_WARNING = 500;
+export const TOTAL_KEYS_COUNT_LIMIT = 800;

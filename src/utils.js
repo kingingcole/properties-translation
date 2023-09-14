@@ -9,13 +9,20 @@ const openai = new OpenAI({
 
 const zip = new JSZip()
 
-export async function readAndParseEnglishFile(englishFile) {
+export async function readAndParseEnglishFile(englishFile, type) {
   if (englishFile) {
     const reader = new FileReader()
     return new Promise((resolve, reject) => {
       reader.onload = () => {
-        // Parse the English property file using dot-properties
-        const parsedProperties = parse(reader.result)
+        let parsedProperties
+        let { result } = reader
+        if (type == 'properties') {
+          // Parse the English property file using dot-properties
+          parsedProperties = parse(result)
+        } else {
+          parsedProperties = JSON.parse(result)
+        }
+
         resolve(parsedProperties)
       }
       reader.onerror = () => {
@@ -55,14 +62,22 @@ export function generatePropertyFile(properties) {
   return fileContent
 }
 
-export function createZipFile(translatedProperties) {
+export function createZipFile(translatedProperties, type, originalFileName) {
   // Iterate through target languages
   for (const language in translatedProperties) {
     // Add each translated .property file to the .zip file
-    zip.file(
-      `translations_${language}.properties`,
-      generatePropertyFile(translatedProperties[language]),
-    )
+    const fileName = generateTranslatedFileName(originalFileName, language)
+    if (type == 'properties') {
+      zip.file(
+        fileName,
+        generatePropertyFile(translatedProperties[language]),
+      )
+    } else {
+      zip.file(
+        fileName,
+        JSON.stringify(translatedProperties[language], null, 2),
+      )
+    }
   }
 
   // Generate the .zip file
@@ -76,6 +91,18 @@ export function createZipFile(translatedProperties) {
     a.click()
     window.URL.revokeObjectURL(url)
   })
+}
+
+function generateTranslatedFileName(originalFileName, languageCode) {
+  // Extract the base name and file extension
+  const parts = originalFileName.split('.');
+  const baseName = parts.slice(0, -1).join('.');
+  const fileExtension = parts.slice(-1)[0];
+
+  // Append the language code and recombine with the file extension
+  const translatedFileName = `${baseName}_${languageCode}.${fileExtension}`;
+
+  return translatedFileName;
 }
 
 // Define the supported languages

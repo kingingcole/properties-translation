@@ -131,8 +131,27 @@ export const supportedLanguages = [
   { code: 'it', name: 'Italian' },
   { code: 'de', name: 'German' },
   { code: 'pl', name: 'Polish' },
-  // Add more languages here in the same format if needed
-]
+  { code: 'fr', name: 'French' },
+  { code: 'ja', name: 'Japanese' },
+  { code: 'ko', name: 'Korean' },
+  { code: 'zh-cn', name: 'Simplified Chinese' },
+  { code: 'zh-tw', name: 'Traditional Chinese' },
+  { code: 'ru', name: 'Russian' },
+  { code: 'pt', name: 'Portuguese' },
+  { code: 'nl', name: 'Dutch' },
+  { code: 'sv', name: 'Swedish' },
+  { code: 'da', name: 'Danish' },
+  { code: 'fi', name: 'Finnish' },
+  { code: 'no', name: 'Norwegian' },
+  { code: 'tr', name: 'Turkish' },
+  { code: 'ar', name: 'Arabic' },
+  { code: 'hi', name: 'Hindi' },
+  { code: 'id', name: 'Indonesian' },
+  // You can continue adding more languages as needed
+];
+
+
+export const MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT = 4;
 
 export const TOTAL_KEYS_COUNT_WARNING = 500;
 export const TOTAL_KEYS_COUNT_LIMIT = 800;

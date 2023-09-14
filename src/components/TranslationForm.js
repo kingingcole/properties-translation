@@ -1,13 +1,14 @@
 'use client'
 
 import {
+  MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT,
   TOTAL_KEYS_COUNT_LIMIT,
   TOTAL_KEYS_COUNT_WARNING,
   countKeysWithStrings,
   createZipFile,
   readAndParseEnglishFile,
   supportedLanguages,
-  translateWithChatGPT
+  translateWithChatGPT,
 } from '@/utils'
 import { useEffect, useState } from 'react'
 import ProgressBar from './ProgressBar'
@@ -21,7 +22,8 @@ const TranslationForm = () => {
   const [progress, setProgress] = useState(0)
 
   const [fileType, setFileType] = useState('')
-  const [totalKeysCount, setTotalKeysCount] = useState(0);
+  const [totalKeysCount, setTotalKeysCount] = useState(0)
+  const [showAllLanguages, setShowAllLanguages] = useState(false)
 
   const cleanUp = () => {
     setEnglishFile(null)
@@ -30,6 +32,14 @@ const TranslationForm = () => {
     setIsTranslating(false)
     setErrorMessage('')
   }
+
+  const toggleShowAllLanguages = () => {
+    setShowAllLanguages(!showAllLanguages)
+  }
+
+  const displayedLanguages = showAllLanguages
+    ? supportedLanguages
+    : supportedLanguages.slice(0, MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT)
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0]
@@ -44,7 +54,7 @@ const TranslationForm = () => {
 
     // Check if the selected file has the correct file extension
     if (file.name.endsWith('.properties')) {
-      setFileType('properties')    
+      setFileType('properties')
     } else if (file && file.name.endsWith('.json')) {
       setFileType('json')
     } else {
@@ -120,13 +130,13 @@ const TranslationForm = () => {
       if (json.hasOwnProperty(key)) {
         const value = json[key]
 
-        if (typeof value === 'object') { 
+        if (typeof value === 'object') {
           // If the value is an object, recursively translate it
           translatedData[key] = await translateJson(value, languageName)
         } else {
           // Translate the value using your translation function
           translatedData[key] = await translateWithChatGPT(value, languageName)
-          setProgress(progress => progress + (100/totalKeysCount))
+          setProgress((progress) => progress + 100 / totalKeysCount)
         }
       }
     }
@@ -158,7 +168,7 @@ const TranslationForm = () => {
             language.name,
           )
           translatedContent[key] = translatedText
-          setProgress(progress => progress + (100/totalKeysCount))
+          setProgress((progress) => progress + 100 / totalKeysCount)
         }),
       )
       return { languageCode, content: translatedContent }
@@ -197,38 +207,45 @@ const TranslationForm = () => {
     const getTotalKeysCount = async () => {
       if (englishFile && targetLanguages.length && fileType) {
         const fileContent = await readAndParseEnglishFile(englishFile, fileType)
-        setTotalKeysCount(countKeysWithStrings(fileContent) * targetLanguages.length)
+        setTotalKeysCount(
+          countKeysWithStrings(fileContent) * targetLanguages.length,
+        )
       }
     }
 
-    getTotalKeysCount();
-    setProgress(0);
+    getTotalKeysCount()
+    setProgress(0)
   }, [englishFile, fileType, targetLanguages.length])
 
   const getKeysCountLimitMessage = () => {
-    
     if (totalKeysCount > TOTAL_KEYS_COUNT_LIMIT) {
       return (
         <small className="block text-sm font-medium text-red-700 mb-2">
-          Error: Request too large. Consider breaking down the content into smaller parts.
+          Error: Request too large. Consider breaking down the content into
+          smaller parts.
         </small>
       )
     }
     if (totalKeysCount > TOTAL_KEYS_COUNT_WARNING) {
       return (
         <small className="block text-sm font-medium text-yellow-700 mb-2">
-          Warning: Service may be slow and may fail. Consider breaking down the content into smaller parts.
+          Warning: Service may be slow and may fail. Consider breaking down the
+          content into smaller parts.
         </small>
       )
     }
 
-    return null;
+    return null
   }
 
-  const btnDisabled = !englishFile || !targetLanguages.length || isTranslating || totalKeysCount > TOTAL_KEYS_COUNT_LIMIT
+  const btnDisabled =
+    !englishFile ||
+    !targetLanguages.length ||
+    isTranslating ||
+    totalKeysCount > TOTAL_KEYS_COUNT_LIMIT
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md w-96 mx-auto mt-8">
+    <div className="bg-white p-6 rounded-lg shadow-md w-96 mx-2 my-8">
       <h1 className="text-2xl font-semibold mb-4 text-center">
         Property File Translation
       </h1>
@@ -253,7 +270,7 @@ const TranslationForm = () => {
           <label className="block text-sm font-medium text-gray-700">
             Select Target Languages
           </label>
-          {supportedLanguages.map((language) => (
+          {displayedLanguages.map((language) => (
             <div key={language.code} className="mt-2">
               <label className="inline-flex items-center">
                 <input
@@ -269,6 +286,15 @@ const TranslationForm = () => {
               </label>
             </div>
           ))}
+          {supportedLanguages.length > MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT && (
+            <button
+              type='button'
+              onClick={toggleShowAllLanguages}
+              className="text-sm text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-2"
+            >
+              {showAllLanguages ? 'Show Less' : 'Show More'}
+            </button>
+          )}
         </div>
         {getKeysCountLimitMessage()}
         <button

@@ -62,16 +62,22 @@ export function generatePropertyFile(properties) {
   return fileContent
 }
 
-export function createZipFile(translatedProperties, type, originalFileName, namingPattern) {
+export function createZipFile(
+  translatedProperties,
+  type,
+  originalFileName,
+  namingPattern,
+) {
   // Iterate through target languages
   for (const language in translatedProperties) {
     // Add each translated .property file to the .zip file
-    const fileName = generateTranslatedFileName(originalFileName, language, namingPattern)
+    const fileName = generateTranslatedFileName(
+      originalFileName,
+      language,
+      namingPattern,
+    )
     if (type == 'properties') {
-      zip.file(
-        fileName,
-        generatePropertyFile(translatedProperties[language]),
-      )
+      zip.file(fileName, generatePropertyFile(translatedProperties[language]))
     } else {
       zip.file(
         fileName,
@@ -93,46 +99,50 @@ export function createZipFile(translatedProperties, type, originalFileName, nami
   })
 }
 
-export function generateTranslatedFileName(originalFileName, languageCode, namingPattern) {
+export function generateTranslatedFileName(
+  originalFileName,
+  languageCode,
+  namingPattern,
+) {
   // Extract the base name and file extension
-  const parts = originalFileName.split('.');
-  const baseName = parts.slice(0, -1).join('.');
-  const fileExtension = parts.slice(-1)[0];
+  const parts = originalFileName.split('.')
+  const baseName = parts.slice(0, -1).join('.')
+  const fileExtension = parts.slice(-1)[0]
 
   // Get the language name based on languageCode
-  const language = supportedLanguages.find((lang) => lang.code === languageCode);
+  const language = supportedLanguages.find((lang) => lang.code === languageCode)
 
   // Replace placeholders in the naming pattern
   const replacedPattern = namingPattern
     .replace('{languageCode}', languageCode)
     .replace('{originalFileName}', baseName)
     .replace('{lang}', language.name.toLowerCase())
-    .replace('{Lang}', language.name);
+    .replace('{Lang}', language.name)
 
   // Combine the replaced pattern with the file extension
-  const translatedFileName = `${replacedPattern.trim()}.${fileExtension}`;
+  const translatedFileName = `${replacedPattern.trim()}.${fileExtension}`
 
-  return translatedFileName;
+  return translatedFileName
 }
 
 // function to get the total number of values to translate in the English file
 export function countKeysWithStrings(obj) {
-  let count = 0;
+  let count = 0
 
   // Iterate over the keys in the object
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
       // Check if the value associated with the key is a string
       if (typeof obj[key] === 'string') {
-        count++; // Increment the count for each string value
+        count++ // Increment the count for each string value
       } else if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
         // If the value is an object, recursively count its keys
-        count += countKeysWithStrings(obj[key]);
+        count += countKeysWithStrings(obj[key])
       }
     }
   }
 
-  return count;
+  return count
 }
 
 // Define the supported languages
@@ -158,44 +168,84 @@ export const supportedLanguages = [
   { code: 'hi', name: 'Hindi' },
   { code: 'id', name: 'Indonesian' },
   // You can continue adding more languages as needed
-];
+]
 
-export const languageCodeRegex = /{languageCode}/;
-export const langRegex = /{lang}/;
-export const LangRegex = /{Lang}/;
-export const originalFileNameRegex = /{originalFileName}/;
+export const languageCodeRegex = /{languageCode}/
+export const langRegex = /{lang}/
+export const LangRegex = /{Lang}/
+export const originalFileNameRegex = /{originalFileName}/
 
 export function validateNamingPattern(pattern) {
   // Check if the pattern contains at least one of the variables
-  if (!(languageCodeRegex.test(pattern) || langRegex.test(pattern) || LangRegex.test(pattern))) {
-    return { isValid: false, reason: "Pattern must contain at least one of {languageCode}, {lang}, or {Lang}." };
+  if (
+    !(
+      languageCodeRegex.test(pattern) ||
+      langRegex.test(pattern) ||
+      LangRegex.test(pattern)
+    )
+  ) {
+    return {
+      isValid: false,
+      reason:
+        'Pattern must contain at least one of {languageCode}, {lang}, or {Lang}.',
+    }
   }
 
   // If {originalFileName} is present, ensure at least one of the other variables is also present
   if (originalFileNameRegex.test(pattern)) {
-    if (!(languageCodeRegex.test(pattern) || langRegex.test(pattern) || LangRegex.test(pattern))) {
+    if (
+      !(
+        languageCodeRegex.test(pattern) ||
+        langRegex.test(pattern) ||
+        LangRegex.test(pattern)
+      )
+    ) {
       return {
         isValid: false,
-        reason: "If {originalFileName} is present, the pattern must also contain at least one of {languageCode}, {lang}, or {Lang}.",
-      };
+        reason:
+          'If {originalFileName} is present, the pattern must also contain at least one of {languageCode}, {lang}, or {Lang}.',
+      }
     }
   }
 
   // Define a regular expression to check if the pattern ends with specific characters
-  const forbiddenEndingCharsRegex = /[.,\-?!"'(){\[\]:;<>]+$/;
+  const forbiddenEndingCharsRegex = /[.,\-?!"'(){\[\]:;<>]+$/
 
   // Check if the pattern ends with forbidden characters
   if (forbiddenEndingCharsRegex.test(pattern)) {
-    return { isValid: false, reason: "Pattern cannot end with characters like . , - ? ! ' \" ( ) { [ ] : ; < >" };
+    return {
+      isValid: false,
+      reason:
+        'Pattern cannot end with characters like . , - ? ! \' " ( ) { [ ] : ; < >',
+    }
   }
 
   // The pattern is valid
-  return { isValid: true };
+  return { isValid: true }
 }
 
+export const MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT = 4
 
+export const TOTAL_KEYS_COUNT_WARNING = 500
+export const TOTAL_KEYS_COUNT_LIMIT = 800
 
-export const MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT = 4;
+/************ FOR METRICS PURPOSES ************/
 
-export const TOTAL_KEYS_COUNT_WARNING = 500;
-export const TOTAL_KEYS_COUNT_LIMIT = 800;
+export function generateUniqueIdentifier() {
+  // For simplicity, this example generates a random 10-character alphanumeric identifier
+  const alphanumeric =
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+  let identifier = ''
+  for (let i = 0; i < 10; i++) {
+    identifier += alphanumeric.charAt(
+      Math.floor(Math.random() * alphanumeric.length),
+    )
+  }
+  return identifier
+}
+
+export const START_TRANSLATION = "START TRANSLATION"
+export const TRANSLATION_SUCCESS = "TRANSLATION SUCCESS"
+export const TRANSLATION_FAILURE = "TRANSLATION FAILURE"
+
+/***********************************************/

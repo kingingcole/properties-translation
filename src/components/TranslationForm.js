@@ -2,21 +2,31 @@
 
 import {
   MAX_DISPLAY_LANGUAGE_OPTIONS_COUNT,
+  START_TRANSLATION,
   TOTAL_KEYS_COUNT_LIMIT,
   TOTAL_KEYS_COUNT_WARNING,
+  TRANSLATION_FAILURE,
+  TRANSLATION_SUCCESS,
   countKeysWithStrings,
   createZipFile,
   generateTranslatedFileName,
+  generateUniqueIdentifier,
+  getVisitorIdentifier,
   readAndParseEnglishFile,
   supportedLanguages,
   translateWithChatGPT,
   validateNamingPattern,
 } from '@/utils'
+import { Switch } from 'evergreen-ui'
+import mixpanel from 'mixpanel-browser'
 import { useEffect, useState } from 'react'
+import { getIPLocation } from 'react-ip-location'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 
 import AdvancedOptionsButton from './AdvancedOptionsButton'
 import ProgressBar from './ProgressBar'
+
+const visitorIdentifier = getVisitorIdentifier()
 
 const TranslationForm = () => {
   const [englishFile, setEnglishFile] = useState(null)
@@ -34,6 +44,9 @@ const TranslationForm = () => {
   const [namingPattern, setNamingPattern] = useState(
     '{originalFileName}_{languageCode}',
   )
+  const [enableAnalytics, setEnableAnalytics] = useState(true)
+
+  const [country, setCountry] = useState('')
 
   const cleanUp = () => {
     setEnglishFile(null)
@@ -45,6 +58,20 @@ const TranslationForm = () => {
 
   const toggleShowAllLanguages = () => {
     setShowAllLanguages(!showAllLanguages)
+  }
+
+  const toggleAnalytics = (e) => {
+    setEnableAnalytics(!enableAnalytics)
+  }
+
+  const toggleAdvancedOptions = () => {
+    setAdvancedOptionsVisible(!isAdvancedOptionsVisible)
+  }
+
+  const logAnalytics = (name, data) => {
+    if (enableAnalytics && typeof window !== 'undefined') {
+      mixpanel.track(name, data);
+    }
   }
 
   const displayedLanguages = showAllLanguages
@@ -84,7 +111,8 @@ const TranslationForm = () => {
     }
   }
 
-  const translateAndDownloadJSON = async () => {
+  const translateAndDownloadJSON = async (taskId) => {
+    // generate new task id
     setIsTranslating(true)
     setErrorMessage('')
     setProgress(0)
@@ -109,6 +137,12 @@ const TranslationForm = () => {
         translations.forEach((translation) => {
           translatedFilesObject[translation.languageCode] = translation.content
         })
+
+        logAnalytics(TRANSLATION_SUCCESS, {
+          taskId,
+          totalKeysCount
+        })
+
         createZipFile(
           translatedFilesObject,
           'json',
@@ -120,6 +154,9 @@ const TranslationForm = () => {
       .catch((error) => {
         setErrorMessage(error.message)
         setIsTranslating(false)
+        logAnalytics(TRANSLATION_FAILURE, {
+          taskId
+        })
       })
   }
 
@@ -188,6 +225,12 @@ const TranslationForm = () => {
         translations.forEach((translation) => {
           translatedFilesObject[translation.languageCode] = translation.content
         })
+
+        logAnalytics(TRANSLATION_SUCCESS, {
+          taskId,
+          totalKeysCount
+        })
+
         createZipFile(
           translatedFilesObject,
           'properties',
@@ -199,6 +242,9 @@ const TranslationForm = () => {
       .catch((error) => {
         setErrorMessage(error.message)
         setIsTranslating(false)
+        logAnalytics(TRANSLATION_FAILURE, {
+          taskId
+        })
       })
   }
 
@@ -208,15 +254,21 @@ const TranslationForm = () => {
       return
     }
 
+    const taskId = `task-${generateUniqueIdentifier()}`
+
+    logAnalytics(START_TRANSLATION, {
+      timestamp: new Date().toISOString(),
+      location: country,
+      taskId,
+      fileType,
+      fileName: englishFile.name,
+    })
+
     if (fileType === 'properties') {
       translateAndDownloadProperties()
     } else {
       translateAndDownloadJSON()
     }
-  }
-
-  const toggleAdvancedOptions = () => {
-    setAdvancedOptionsVisible(!isAdvancedOptionsVisible)
   }
 
   useEffect(() => {
@@ -232,6 +284,23 @@ const TranslationForm = () => {
     getTotalKeysCount()
     setProgress(0)
   }, [englishFile, fileType, targetLanguages.length])
+
+  useEffect(() => {
+    getIPLocation().then((result) => {
+      setCountry(result?.country || '')
+    })
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_TOKEN, {
+        debug: process.env.NODE_ENV === 'development',
+        track_pageview: true,
+        persistence: 'localStorage',
+      })
+      // mixpanel.identify(visitorIdentifier)
+    }
+  }, [])
 
   const getKeysCountLimitMessage = () => {
     if (totalKeysCount > TOTAL_KEYS_COUNT_LIMIT) {
@@ -281,8 +350,12 @@ const TranslationForm = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-screen-sm mx-auto my-8">
       <div className="mb-5">
-        <h1 className="text-2xl text-gray-700 font-semibold mb-4 text-center mb-0">Localization File AI Translator</h1>
-        <h5 className="w-full text-sm text-gray-700 text-center">Translate localization files to multiple languages</h5>
+        <h1 className="text-2xl text-gray-700 font-semibold mb-4 text-center mb-0">
+          Localization File AI Translator
+        </h1>
+        <h5 className="w-full text-sm text-gray-700 text-center">
+          Translate localization files to multiple languages
+        </h5>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -337,50 +410,59 @@ const TranslationForm = () => {
         />
 
         {isAdvancedOptionsVisible && (
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-700 flex">
-              <span>Naming Pattern for New Translated Files</span>
-              <span
-                className="ml-2 text-gray-700"
-                data-tip="Naming Pattern Help"
-                data-tooltip-id="naming-pattern-tooltip"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-gray-700 cursor-pointer"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <div className="mb-4" >
+            <div className="my-3">
+              <label className="text-sm font-medium text-gray-700 flex">
+                <span>Naming Pattern for New Translated Files</span>
+                <span
+                  className="ml-2 text-gray-700"
+                  data-tip="Naming Pattern Help"
+                  data-tooltip-id="naming-pattern-tooltip"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 16v-4M12 8h.01"
-                  />
-                </svg>
-              </span>
-            </label>
-            <div className="flex items-center mt-2">
-              <input
-                type="text"
-                className="mt-1 px-4 py-2 w-full rounded-lg border focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-600"
-                placeholder="Enter naming pattern"
-                value={namingPattern}
-                onChange={(e) => setNamingPattern(e.target.value)}
-              />
-              <input
-                type="text"
-                className="mt-1 ml-2 px-4 py-2 rounded-lg text-sm text-gray-600 bg-gray-100 w-28 cursor-not-allowed"
-                value={fileType && `.${fileType}`}
-                disabled
-              />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-gray-700 cursor-pointer"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 16v-4M12 8h.01"
+                    />
+                  </svg>
+                </span>
+              </label>
+              <div className="flex items-center mt-2">
+                <input
+                  type="text"
+                  className="mt-1 px-4 py-2 w-full rounded-lg border focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-600"
+                  placeholder="Enter naming pattern"
+                  value={namingPattern}
+                  onChange={(e) => setNamingPattern(e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="mt-1 ml-2 px-4 py-2 rounded-lg text-sm text-gray-600 bg-gray-100 w-28 cursor-not-allowed"
+                  value={fileType && `.${fileType}`}
+                  disabled
+                />
+              </div>
+              {!isValidNamingPattern && (
+                <small className="text-red-500">{reason}</small>
+              )}
+              <small>{getSampleValidFileName()}</small>
             </div>
-            {!isValidNamingPattern && (
-              <small className="text-red-500">{reason}</small>
-            )}
-            <small>{getSampleValidFileName()}</small>
+
+            <div className="my-3 flex items-center">
+              <label className="text-sm font-medium text-gray-700 mr-2">
+                <span>Enable Analytics</span>
+              </label>
+              <Switch checked={enableAnalytics} onChange={toggleAnalytics} disabled={false} />
+            </div>
           </div>
         )}
         {getKeysCountLimitMessage()}
@@ -412,17 +494,16 @@ const TranslationForm = () => {
               English file
             </li>
             <li className="my-2">
-              <code>{'{languageCode}'}</code>: Language code of the
-              newly translated file (e.g., &apos;es&apos;, &apos;pl&apos;)
+              <code>{'{languageCode}'}</code>: Language code of the newly
+              translated file (e.g., &apos;es&apos;, &apos;pl&apos;)
             </li>
             <li className="my-2">
-              <code>{'{lang}'}</code>: Full lowercase language text of
-              the newly translated file (e.g., &apos;spanish&apos;,
-              &apos;polish&apos;)
+              <code>{'{lang}'}</code>: Full lowercase language text of the newly
+              translated file (e.g., &apos;spanish&apos;, &apos;polish&apos;)
             </li>
             <li className="my-2">
-              <code>{'{Lang}'}</code>: Full capitalized language text
-              of the newly translated file (e.g., &apos;Spanish&apos;,
+              <code>{'{Lang}'}</code>: Full capitalized language text of the
+              newly translated file (e.g., &apos;Spanish&apos;,
               &apos;French&apos;)
             </li>
           </ul>

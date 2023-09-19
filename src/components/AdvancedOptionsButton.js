@@ -2,6 +2,7 @@ const AdvancedOptionsButton = ({ isVisible, toggleAdvancedOptions }) => {
   return (
     <div className="mb-4">
       <button
+        type='button'
         className="text-sm text-indigo-500 hover:text-indigo-700 cursor-pointer flex items-center"
         onClick={toggleAdvancedOptions}
       >

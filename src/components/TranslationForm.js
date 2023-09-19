@@ -249,7 +249,7 @@ const TranslationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!englishFile || !targetLanguages.length) {
+    if (!englishFile || !targetLanguages.length || isTranslating) {
       return
     }
 

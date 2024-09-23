@@ -1,0 +1,1417 @@
+{
+	"unknown": "Unknown",
+	"next": "Next",
+	"connect": "Connect",
+	"save": "Save",
+	"appName": "Store Connect",
+	"searchForProducts": "Search for products",
+	"configureScanner": "Please configure scanner",
+	"categories": "Categories",
+	"products": "Products",
+	"noCategoriesFound": "No categories found",
+	"noProductsFound": "No products found",
+	"loading": "Loading...",
+	"scan": "Scan",
+	"rescan": "Rescan",
+	"enterBarcodeNumberManually": "Enter barcode manually",
+	"dateFormat": "Date Format",
+	"version": "Version %{version}",
+	"yesterday": "Yesterday",
+	"today": "Today",
+	"tomorrow": "Tomorrow",
+	"failedToSetSorting": "Failed to set sorting",
+	"supplier": "Supplier",
+	"productType": "Product Type",
+	"productWeight": "Product Weight",
+	"productHierarchy": "Product Hierarchy",
+	"typeHere": "Type Here...",
+	"selectDepot": "Select Depot",
+	"quantities": "Quantities",
+	"unit": "Unit",
+	"name": "Name",
+	"value": "Value",
+	"equivalent": "Equivalent",
+	"partner": "Partner",
+	"filter": "Filter",
+	"price": "Price",
+	"business": "Business",
+	"guarantee": "Guarantee",
+	"productManager": "Product Manager",
+	"clearAll": "Clear All",
+	"apply": "Apply",
+	"productNotFound": "Product Not Found",
+	"warning": "WARNING",
+	"confirm": "CONFIRM",
+	"pleaseScanAgain": "Please scan again or enter the barcode number manually.",
+	"scanAgain": "Scan Again",
+	"result": "Result",
+	"enterAValue": "Enter a value",
+	"selectPriceRange": "Select a price range",
+	"businessDescription": "Select one or more businesses",
+	"search": "Search",
+	"guaranteeDescription": "Enter a guarantee (1-3)",
+	"productManagerDescription": "Enter a product manager",
+	"operation": "Operation",
+	"operationDescription": "Select one or more operations",
+	"toBePacked": "To be packed?",
+	"toBePackedDescription": "Is the product packed?",
+	"customerCodeDescription": "Enter a Customer Code",
+	"customerNameDescription": "Enter a Customer Name",
+	"shipmentDateDescription": "Enter a Shipment Date",
+	"routeDescription": "Enter a Route",
+	"carrierDescription": "Enter a Carrier",
+	"variableWeight": "Variable weight?",
+	"variableWeightDescription": "Is the product variable weight?",
+	"no": "No",
+	"yes": "Yes",
+	"failedToFetchProduct": "Failed to fetch Product",
+	"notAvailable": "Not available",
+	"dataNotAvailable": "Data temporarily not available",
+	"catalogReference": "Catalog Reference",
+	"catalogReferenceDescription": "Enter a catalog reference",
+	"noProductFound": "No Product Found \nPlease try with a different barcode",
+	"scanProductMSG": "Scan your items...",
+	"required": "required",
+	"requestTimedOut": "Request timed out",
+	"noImagesFound": "No images found",
+	"noDepotsFound": "No Depots found",
+	"noCountersFound": "No counters found",
+	"customer": "Customer",
+	"customerCode": "Customer Code",
+	"shipmentDate": "Shipment Date",
+	"route": "Route",
+	"carrier": "Carrier",
+	"location": "Location",
+	"productFamily": "Product Family",
+	"productCode": "Product Code",
+	"detailsUnavail": "Details unavailable",
+	"cancel": "Cancel",
+	"ok": "OK",
+	"substitution": "Substitution",
+	"chainage": "Chainage",
+	"designation": "Designation",
+	"stockQuantity": "Stock Qty",
+	"availableQuantity": "Available Qty",
+	"replenishmentProvider": "Replenishment. provider",
+	"customerReservation": "Customer Reservation",
+	"clearFiltersTitle": "Clear filters",
+	"clearFiltersMsg": "Are you sure to reset filter values as defaults ?",
+	"addNewItemMsg": "This item is not part of the list.",
+	"bluetooth": {
+		"devices": "Bluetooth Devices",
+		"device": {
+			"status": {
+				"disconnecting": "Disconnecting",
+				"disconnected": "Disconnected",
+				"connecting": "Connecting",
+				"connected": "Connected"
+			}
+		},
+		"enabled": {
+			"true": "Bluetooth is ON",
+			"false": "Bluetooth is OFF"
+		}
+	},
+	"scanningItem": "Product Search",
+	"barcodeDataError": "Please setup barcode value from scanner setting option.",
+	"itemScanError": "Scanned quantity greater than expected quantity",
+	"itemScanError2": "Command not locked for the user, Scan prohibited. Please lock the order first",
+	"itemScanError3": "Command not found",
+	"line": "Line",
+	"lines": "Lines",
+	"systems": {
+		"ACE": "ACE",
+		"SPIRAL": "Spiral",
+		"JTOB": "JtoB",
+		"PROGEST": "Progest"
+	},
+	"alerts": {
+		"delete": {
+			"title": "Delete %{type}",
+			"noTypeTitle": "Delete",
+			"confirmation": "Are you sure you want to delete '%{name}'?",
+			"buttons": {
+				"positive": "Delete",
+				"negative": "Cancel"
+			}
+		},
+		"submit": {
+			"title": "Submit",
+			"buttons": {
+				"positive": "Submit",
+				"negative": "Cancel"
+			}
+		},
+		"signOut": {
+			"title": "Sign Out",
+			"confirmation": "Are you sure you want to sign out?",
+			"buttons": {
+				"positive": "Sign Out",
+				"negative": "Cancel"
+			}
+		},
+		"lockItems": {
+			"title": "Lock",
+			"confirmation": "Are you sure you want to lock this item?",
+			"confirmationMultiple": "Are you sure you want to lock the selected items?",
+			"buttons": {
+				"positive": "Lock",
+				"negative": "Cancel"
+			}
+		},
+		"unlockItem": {
+			"title": "Unlock",
+			"confirmation": "Unlock this event? This will remove all unsubmitted counts.",
+			"buttons": {
+				"positive": "Unlock",
+				"negative": "Cancel"
+			}
+		}
+	},
+	"picking": {
+		"tabs": {
+			"new": "New",
+			"processing": "Processing",
+			"completed": "Complete"
+		},
+		"status": {
+			"delivered": "Delivered"
+		},
+		"validationError": "Validation error",
+		"validationLbl": "Waiting for upload",
+		"assignedToMe": "Assigned to Me",
+		"assignedToAnyone": "Assigned to Anyone",
+		"noPickingOrdersFound": "No picking orders found",
+		"downloadingOrders": "Downloading orders",
+		"noOrderLinesFound": "No order lines found",
+		"lockByOtherMsg": "This picking order is locked by",
+		"memoDlgTitle": "Internal Memo",
+		"selectOrder": "Select Order",
+		"packageQty": "Number of packages",
+		"screens": {
+			"picking": {
+				"title": "Picking"
+			},
+			"orderDetails": {
+				"itemsToPick": "items to pick",
+				"itemToPick": "item to pick"
+			},
+			"orderItemDetails": {
+				"refreshProductDetails": "Refresh product Details"
+			},
+			"orderVerification": {
+				"title": "Picking Validation",
+				"deliveredTitle": "Delivered Order Details",
+				"summary": "Summary",
+				"shipmentNote": "Shipment",
+				"transportLabel": "Transport",
+				"carrier": "Carrier",
+				"shipmentDate": "Shipment Date"
+			},
+			"orderValidation": {
+				"title": "Validate Order",
+				"description": "Do you wish to validate this order?",
+				"printDocuments": "Print Documents?"
+			},
+			"printOrder": {
+				"title": "Print Documents"
+			},
+			"orderInfo": {
+				"orderInfoTitle": "Order Information",
+				"lblOrderBy": "Order by:",
+				"lblDeliverTo": "Deliver To:",
+				"lblShipment": "Shipment",
+				"lblAddress": "Address:",
+				"lblDate": "Date:",
+				"lblTime": "Time:",
+				"lblRouteName": "Route name:",
+				"lblCarrierName": "Carrier name:",
+				"lblAssignee": "Assignee:",
+				"lblPreparedBy": "Prepared by",
+				"lblTotalOrderAmount": "Total order amount:",
+				"unLockConfirmTitle": "Unlocking Order",
+				"unLockConfirmMsg": "Confirm to unlock it. The entered quantities will be deleted when order will be unlocked.",
+				"unLockError": "Error while executing unlock request"
+			}
+		},
+		"components": {
+			"searchOrderPopup": {
+				"title": "Order Search",
+				"noOrderFound": "No Order Found \nPlease try with a different barcode"
+			},
+			"orderPickingCounter": {
+				"selectQty": "Select Quantity",
+				"unit": "Unit (U)",
+				"numeratorDefault": "-",
+				"denoninatorDefault": "--"
+			}
+		}
+	},
+	"inventory": {
+		"title": "Logistics",
+		"menuTiles": {
+			"stockCounts": "Stock Counts",
+			"labeling": "Labeling",
+			"priceChecks": "Price Checks",
+			"markdowns": "Markdowns",
+			"procurement": "Procurement",
+			"receiving": "Receiving",
+			"storage": "Storage",
+			"stockControl": "Stock Control",
+			"picking": "Picking",
+			"cartonPicking": "Carton Picking",
+			"reservePicking": "Reserve Picking",
+			"shipments": "Shipments",
+			"customerReturns": "Customer Returns",
+			"supplierReturns": "Supplier Returns"
+		},
+		"transactions": {
+			"general": "Transaction",
+			"stockCount": "Stock Count",
+			"labelRequest": "Label Request",
+			"markdown": "Markdown",
+			"receipt": "Receipt",
+			"productRequest": "Product Request",
+			"stockControl": "Stock Control",
+			"priceCheck": "Price Check",
+			"preTicket": "Pre-Ticket",
+			"counterSale": "Counter Sale",
+			"shipment": "Shipment",
+			"salesOrder": "Sales Order"
+		},
+		"status": {
+			"new": "New",
+			"open": "Open",
+			"toPrepare": "To Be Prepared",
+			"inProgress": "In Progress",
+			"processing": "Processing",
+			"validated": "Validated",
+			"valuating": "Valuating",
+			"completed": "Completed",
+			"error": "Error"
+		},
+		"traceability": {
+			"notStocked": "Not stocked",
+			"noControl": "Not controlled",
+			"lotControl": "Lot controlled",
+			"lotAndLocation": "Lots and locations",
+			"locationOnly": "Stored in locations",
+			"serialControl": "Serial controlled"
+		},
+		"components": {
+			"downloadView": {
+				"downloadDatabase": "Download Database",
+				"refreshDatabase": "Refresh Database",
+				"lastUpdate": "Updated",
+				"size": "Size",
+				"timeToDownload": "Downloaded in %{seconds} secs",
+				"serverDownloadNotResponding": "The server download API is not responding properly",
+				"never": "Never",
+				"successStatus": "SUCCESS",
+				"failedStatus": "FAILED"
+			},
+			"dashboardTotals": {
+				"productCountSingular": "Product",
+				"productCountPlural": "Products",
+				"totalCount": "Total Count",
+				"total": "Total",
+				"totalTTC": "Amount TTC",
+				"labelCount": "Label Count",
+				"supplierDetails": "Supplier Details",
+				"lineCountSingular": "Line",
+				"lineCountPlural": "Lines",
+				"orderCountSingular": "B.L.",
+				"orderCountPlural": "B.L.",
+				"packageCountSingular": "Pkg",
+				"packageCountPlural": "Pkgs",
+				"weight": "KG",
+				"storedSingular": "stored",
+				"storedPlural": "stored",
+				"toStore": "store",
+				"notStored": "not stored"
+			},
+			"nameInputModal": {
+				"newType": "New %{type}",
+				"rename": "Rename",
+				"placeholder": "Enter a unique name",
+				"alreadyExists": "'%{name}' already exists",
+				"buttons": {
+					"positive": "Save",
+					"negative": "Cancel"
+				}
+			},
+			"labelFormatSelector": {
+				"labelFormat": "Label Format",
+				"selectFormat": "Select a format"
+			},
+			"markdownReasonSelector": {
+				"markdownReason": "Markdown Reason",
+				"selectReason": "Select a reason"
+			},
+			"stockCountLocationSelector": {
+				"selectLocation": "Select the location"
+			},
+			"stockCountInventorySelector": {
+				"title": "Inventory",
+				"selectInventory": "Select the inventory"
+			},
+			"stockLocationSelector": {
+				"title": "Stock Location",
+				"allLocations": "All locations"
+			},
+			"stockCountInventoryList": {
+				"noInventoriesFound": "There are no inventories"
+			},
+			"stockCountLocationList": {
+				"noLocationsFound": "There are no locations"
+			},
+			"stockCountProductList": {
+				"noProductsFound": "There are no products"
+			},
+			"storageUnitList": {
+				"noStorageUnitsFound": "There are no storage units"
+			},
+			"labelFormatList": {
+				"noLabelFormatsFound": "There are no label formats"
+			},
+			"markdownReasonList": {
+				"noReasonsFound": "There are no markdown reasons"
+			},
+			"transactionItem": {
+				"startDate": "Started",
+				"lastDate": "Modified"
+			},
+			"transactionEntryList": {
+				"defaultTitle": "Transaction Entry",
+				"scanProduct": "Start scanning products"
+			},
+			"transactionEntryLotList": {
+				"startAdding": "Start adding lots"
+			},
+			"inventoryProductDetails": {
+				"unknown": "Unknown",
+				"product": "Product",
+				"barcode": "Barcode",
+				"priceHT": "Price HT",
+				"stockAvailable": "Stock Available",
+				"expectedStock": "Expected Stock",
+				"lastScan": "Last Scan",
+				"labelFormat": "Label Format",
+				"none": "None",
+				"traceability": "Traceability",
+				"packageQty": "Package Qty",
+				"missingProduct": "Product %{code} cannot be found. Check your offline database.",
+				"labelRequest": "Label"
+			},
+			"inventoryProductLotDetails": {
+				"unknown": "Unknown",
+				"lot": "Lot",
+				"code": "Lot Number",
+				"refAbbrev": "Ref",
+				"reference": "Reference",
+				"expiryDate": "Expiry Date",
+				"manufacturingDate": "Manufacturing Date",
+				"bestBeforeDate": "Best Before Date",
+				"blockCode": "Block Code",
+				"dangerClass": "Danger Class"
+			},
+			"inventoryProductLocationDetails": {
+				"unknown": "Unknown",
+				"location": "Location",
+				"refLot": "Reference",
+				"numLot": "Lot Number",
+				"expiryDate": "Expiry Date",
+				"manufacturingDate": "Manufacturing Date",
+				"bestBeforeDate": "Best Before Date",
+				"blockCode": "Block Code"
+			},
+			"inventoryProductReason": {
+				"markdownReason": "Markdown Reason",
+				"deviationReason": "Deviation Reason"
+			},
+			"transactionEntryItem": {
+				"unitPrice": "Unit Price"
+			},
+			"productCounter": {
+				"title": "Product Quantity",
+				"placeholder": "Enter product quantity"
+			},
+			"priceChecker": {
+				"title": "Product Price",
+				"placeholder": "Enter product price"
+			},
+			"offlineProductList": {
+				"searchPlaceholder": "Search or scan barcode",
+				"pluralObjectName": "products"
+			},
+			"offlineLotList": {
+				"searchPlaceholder": "Search or scan product",
+				"pluralObjectName": "items"
+			},
+			"offlineLocationList": {
+				"searchPlaceholder": "Search locations",
+				"pluralObjectName": "locations"
+			},
+			"offlineKeyedValueList": {
+				"searchPlaceholder": "Search by code or name",
+				"clearResults": "Clear results"
+			},
+			"conflictHandler": {
+				"warningTitle": "WARNING",
+				"anotherEntryExists": "Another entry already exists for product '%{code}' and '%{reasonName}'",
+				"howToHandle": "How should this be handled?",
+				"merge": "Merge",
+				"replace": "Replace",
+				"mergeInfo": "Merge will combine the quantities of this entry and the previous into a single entry.",
+				"replaceInfo": "Replace will delete the previous entry and preserve this one.",
+				"updateConfirmTitle": "Confirm",
+				"updateConfirmText": "Are you sure you want to %{operation}? This operation can't be undone."
+			},
+			"supplierSelector": {
+				"title": "Supplier",
+				"selectValue": "Select a supplier"
+			},
+			"locationSelector": {
+				"title": "Location",
+				"selectValue": "Select a location"
+			},
+			"customerSelector": {
+				"title": "Customer",
+				"selectValue": "Select a customer"
+			},
+			"carrierSelector": {
+				"title": "Carrier",
+				"selectValue": "Select a carrier"
+			},
+			"routeSelector": {
+				"title": "Route",
+				"selectValue": "Select a route"
+			},
+			"vehicleTypeSelector": {
+				"title": "Vehicle Type",
+				"selectValue": "Select a vehicle type"
+			},
+			"entryPanel": {
+				"clear": "Clear"
+			},
+			"purchaseOrderList": {
+				"noOrdersFound": "There are no purchase orders"
+			},
+			"purchaseOrderSelector": {
+				"titleSingular": "Purchase Order",
+				"titlePlural": "Purchase Orders",
+				"selectOrders": "Select purchase orders"
+			},
+			"inventoryViewProductLink": {
+				"fullDetailsLink": "Tap here for full details",
+				"productDetailsLink": "Tap here for product details",
+				"productNotFound": "Product %{code} cannot be found"
+			},
+			"transactionDetailMenu": {
+				"confirmMessage": "Are you sure you want to submit '%{name}'?"
+			},
+			"orderTabView": {
+				"tabs": {
+					"new": "New",
+					"inProgress": "In Progress"
+				}
+			},
+			"orderMemo": {
+				"comments": "Comments",
+				"maxSize": "up to 400 chars"
+			},
+			"orderSearch": {
+				"title": "Search: %{entity}"
+			},
+			"shipmentItem": {
+				"counterLabel": "B.L."
+			},
+			"shipmentOrderListItem": {
+				"remove": "Remove",
+				"removeOrder": "Remove Order",
+				"confirmMessage": "Are you sure you want to remove '%{name}'?"
+			},
+			"orderItemHeader": {
+				"offlineDataUnavailable": "Offline data unavailable"
+			},
+			"shipmentValues": {
+				"driver": "Driver",
+				"driverPlaceholder": "Enter the carrier driver",
+				"registration": "Registration",
+				"registrationPlaceholder": "Enter the registration"
+			},
+			"stockLocationSelect": {
+				"noLocationsFound": "No stock locations found"
+			},
+			"orderItemStorage": {
+				"stored": "Stored"
+			},
+			"receivingOrderList": {
+				"noItemsToDisplay": "There are no receptions to display"
+			},
+			"searchingForPanel": {
+				"location": "Searching for location %{location}",
+				"product": "Searching for product %{product}",
+				"productAndLot": "Searching for %{lot} for product %{product}"
+			},
+			"productLotFilter": {
+				"description": "Filter Lots for %{productCode}",
+				"showAll": "Show all lots",
+				"showAtLocation": "Show lots at %{locationCode}"
+			}
+		},
+		"screens": {
+			"inventorySettings": {
+				"title": "Transaction Settings",
+				"transactions": "Transactions",
+				"showAll": "Show All",
+				"hideCompleted": "Hide Completed",
+				"stockControlEntries": "Stock Control Entries",
+				"hideZeroExpected": "Hide Zero Expected"
+			},
+			"transactionCreate": {
+				"errorTitle": "ERROR",
+				"noProductBarcodes": "Product is not associated with any barcode, You can't save it into the request."
+			},
+			"stockCountCreate": {
+				"title": "New Stock Count",
+				"nameTitle": "Name",
+				"namePlaceholder": "Enter a unique name",
+				"warningTitle": "WARNING",
+				"alreadyExists": "Stock Count '%{name}' already exists"
+			},
+			"stockCountList": {
+				"title": "Stock Counts"
+			},
+			"stockCountDetail": {
+				"title": "Stock Count",
+				"entryTitle": "Stock Entry",
+				"confirmMessage": "Do you confirm the count?"
+			},
+			"stockCountInventorySelect": {
+				"title": "Inventory Location",
+				"selectInventory": "Select an Inventory",
+				"selectLocation": "Select a Location"
+			},
+			"stockLocationSelect": {
+				"title": "Stock Location",
+				"selectLocation": "Select a stock location"
+			},
+			"receivingLocationSelect": {
+				"title": "Location for %{product}",
+				"selectLocation": "Select a new location"
+			},
+			"productLocationSelect": {
+				"title": "Stock Location",
+				"selectLocation": "Select a stock location for %{productCode}"
+			},
+			"stockControlList": {
+				"title": "Stock Control"
+			},
+			"stockControlCreate": {
+				"title": "New Stock Control",
+				"nameTitle": "Name",
+				"namePlaceholder": "Enter a unique name",
+				"warningTitle": "WARNING",
+				"alreadyExists": "Stock Control '%{name}' already exists",
+				"inventoryNoProducts": "Inventory '%{inventory}' contains no products to control."
+			},
+			"stockControlDetail": {
+				"title": "Stock Control",
+				"warningTitle": "WARNING",
+				"entryTitle": "Control Entry",
+				"confirmMessage": "Do you confirm the count?",
+				"mustSelectLocation": "You must select a Stock Location before scanning product.",
+				"confirmAccept": "Please confirm that you wish to accept the count.",
+				"locationUnexpected": "Location %{locationCode} is not expected for %{inventory} but products can still be counted for this location.",
+				"locationFull": "Location %{locationCode} is already used to store product %{productCode}. You cannot add another product."
+			},
+			"stockControlEntryDetail": {
+				"title": "Stock Entry"
+			},
+			"deviationReasonSelect": {
+				"title": "Deviation Reason",
+				"selectReason": "Select a reason",
+				"clearReason": "Clear"
+			},
+			"labelRequestList": {
+				"title": "Labeling"
+			},
+			"labelRequestDetail": {
+				"title": "Label Request",
+				"entryTitle": "Label Entry",
+				"selectFormat": "Select a format before scanning"
+			},
+			"labelEntryDetail": {
+				"title": "Label Entry"
+			},
+			"labelFormatSelect": {
+				"title": "Label Format",
+				"selectFormat": "Select a format",
+				"clearFormat": "Clear"
+			},
+			"markdownList": {
+				"title": "Markdowns"
+			},
+			"markdownDetail": {
+				"title": "Markdown",
+				"entryTitle": "Markdown Entry",
+				"confirmMessage": "Are you sure you want to submit markdown '%{name}'?",
+				"selectReason": "Select a reason before scanning"
+			},
+			"markdownEntryDetail": {
+				"title": "Markdown Entry"
+			},
+			"markdownReasonSelect": {
+				"title": "Markdown Reason",
+				"selectReason": "Select a reason",
+				"clearReason": "Clear"
+			},
+			"markdownValidate": {
+				"title": "Markdown",
+				"selectStorageUnit": "Select a Storage Unit",
+				"confirmMessage": "Are you sure you want to submit markdown '%{name}'?"
+			},
+			"receivingList": {
+				"title": "Receiving",
+				"searchPlaceholder": "Scan product or enter receipt number"
+			},
+			"receivingSearch": {
+				"defaultTitle": "Receiving"
+			},
+			"receivingOrderDetail": {
+				"command": "receive",
+				"confirmMessage": "Do you confirm the receipt?",
+				"confirmStorage": "Do you confirm the storage?",
+				"memoPlaceholder": "Enter comments for the receipt"
+			},
+			"receivingOrderValidation": {
+				"title": "Receiving Validation",
+				"deliveryNoteTitle": "Delivery Note",
+				"deliveryNotePlaceholder": "Enter the supplied delivery note"
+			},
+			"receivingOrderApproval": {
+				"title": "Receiving Approval",
+				"allStored": "Do you consider all the products of this reception stored?",
+				"generateRequest": "You have selected %{count} product lots to label. Do you want to generate the request?",
+				"generateForAll": "Do you want to generate a label request for all products?"
+			},
+			"storageList": {
+				"title": "Storage",
+				"tabs": {
+					"receptions": "Receptions",
+					"locations": "Locations"
+				}
+			},
+			"deliveryList": {
+				"searchPlaceholder": "Scan product or enter picking number"
+			},
+			"cartonPickingList": {
+				"searchPlaceholder": "Scan product or enter carton number",
+				"noItemsToDisplay": "No carton matches your search"
+			},
+			"reservePickingList": {
+				"searchPlaceholder": "Scan product or enter reserve number",
+				"noItemsToDisplay": "No order matches your search"
+			},
+			"categorizedPickingDetail": {
+				"title": {
+					"carton": "Carton Detail",
+					"reserve": "Reserve Detail"
+				},
+				"extendedHeaderTitle": {
+					"carton": "Carton",
+					"reserve": "Reserve"
+				}
+			},
+			"deliverySearch": {
+				"defaultTitle": "Picking"
+			},
+			"deliveryOrderDetail": {
+				"command": "deliver",
+				"confirmMessage": "Do you confirm the delivery?",
+				"memoPlaceholder": "Enter comments for the picking order"
+			},
+			"categorizedPicking": {
+				"command": "prepare",
+				"offlineError": "The order cannot be displayed while offline"
+			},
+			"deliveryOrderValidation": {
+				"title": "Picking Validation",
+				"packageCount": "Enter the package count"
+			},
+			"receiptCreate": {
+				"title": "Create Receipt",
+				"heading": "Please enter the shipment number and select the supplier to create a receipt.",
+				"editTitle": "Edit Receipt",
+				"detailsTitle": "Supplier Details",
+				"shipmentNoteTitle": "Shipment number",
+				"shipmentNotePlaceHolder": "Enter the shipment number"
+			},
+			"receiptDetail": {
+				"title": "Receipt",
+				"confirmMessage": "Are you sure you want to submit receipt '%{name}'?"
+			},
+			"receiptEntryDetail": {
+				"title": "Receipt Entry"
+			},
+			"productRequestList": {
+				"title": "Product Requests"
+			},
+			"productRequestDetail": {
+				"title": "Product Request",
+				"confirmMessage": "Are you sure you want to submit product request '%{name}'?",
+				"entryTitle": "Request Entry"
+			},
+			"priceCheckList": {
+				"title": "Price Checks"
+			},
+			"priceCheckDetail": {
+				"title": "Price Check",
+				"confirmMessage": "Are you sure you want to submit price check '%{name}'?"
+			},
+			"priceCheckEntryDetail": {
+				"title": "Price Check Entry",
+				"printLabel": "Print Label"
+			},
+			"transactionList": {
+				"title": "Transactions"
+			},
+			"offlineProductList": {
+				"title": "Products"
+			},
+			"offlineLotList": {
+				"title": "Product Lots"
+			},
+			"offlineLocationList": {
+				"title": "Product Locations"
+			},
+			"customDetail": {
+				"confirmMessage": "Are you sure you want to submit %{typename} '%{name}'?"
+			},
+			"addProduct": {
+				"title": "Product Search",
+				"unsupportedBarcode": "Barcode %{barcode} is unsupported. This product cannot be added."
+			},
+			"addProductLot": {
+				"title": "Lots for %{productCode}"
+			},
+			"createLot": {
+				"title": "Create Lot",
+				"createNew": "Do you wish to create a new lot for product %{productCode}?",
+				"referencePlaceholder": "Enter a unique lot reference",
+				"mustOccurBefore": "%{firstDate} must occur before %{secondDate}"
+			},
+			"purchaseOrderSelect": {
+				"title": "Purchase Orders"
+			},
+			"supplierDetail": {
+				"title": "Supplier",
+				"purchaseOrders": "Purchase Orders"
+			},
+			"stockCountInventoryList": {
+				"title": "Inventories",
+				"locationsTitle": "Locations",
+				"productsTitle": "Products"
+			},
+			"receivingFilter": {
+				"title": "Filter By",
+				"purchaseOrder": "Purchase Order",
+				"purchaseOrderPlaceholder": "Enter an exising order",
+				"receiptDate": "Receipt Date",
+				"deliveryDate": "Scheduled Delivery",
+				"clearFilter": "Clear Filter"
+			},
+			"storageFilter": {
+				"title": "Filter By",
+				"product": "Product",
+				"productPlaceholder": "Enter product",
+				"clearFilter": "Clear Filter"
+			},
+			"deliveryFilter": {
+				"title": "Filter By",
+				"salesOrder": "Sales Order",
+				"salesOrderPlaceholder": "Enter an exising order",
+				"orderDate": "Order Date",
+				"shipmentDate": "Scheduled Shipment"
+			},
+			"shipmentList": {
+				"title": "Shipments"
+			},
+			"shipmentDetail": {
+				"title": "Shipment",
+				"listEmpty": "Start adding picking orders"
+			},
+			"shipmentOrderSelect": {
+				"title": "Shipment Orders",
+				"searchIndicator": "Searching for '%{searchKey}'"
+			},
+			"shipmentValidation": {
+				"title": "Shipment Validation"
+			},
+			"customerReturnList": {
+				"title": "Customer Returns",
+				"searchPlaceholder": "Scan product or enter return number"
+			},
+			"customerReturnSearch": {
+				"defaultTitle": "Customer Returns"
+			},
+			"customerReturnDetail": {
+				"command": "return",
+				"confirmMessage": "Do you confirm the return?",
+				"memoPlaceholder": "Enter comments for the return"
+			},
+			"customerReturnValidation": {
+				"title": "Return Validation",
+				"deliveryNoteTitle": "Delivery Note",
+				"deliveryNotePlaceholder": "Enter the supplied delivery note"
+			},
+			"customerReturnFilter": {
+				"title": "Filter By",
+				"returnDate": "Return Date"
+			},
+			"supplierReturnList": {
+				"title": "Supplier Returns",
+				"searchPlaceholder": "Scan product or enter return number"
+			},
+			"supplierReturnSearch": {
+				"defaultTitle": "Supplier Returns"
+			},
+			"supplierReturnDetail": {
+				"command": "return",
+				"confirmMessage": "Do you confirm the return?",
+				"memoPlaceholder": "Enter comments for the return"
+			},
+			"supplierReturnValidation": {
+				"title": "Return Validation",
+				"packageCount": "Enter the package count"
+			},
+			"supplierReturnFilter": {
+				"title": "Filter By",
+				"returnDate": "Return Date"
+			},
+			"storageValidation": {
+				"title": "Storage Validation",
+				"confirmStorage": "Do you confirm the storage?"
+			}
+		},
+		"tapPlusEmptyText": {
+			"untyped": "Tap + to add",
+			"general": "Tap + to add a new %{typename}",
+			"stockCount": "Select + to start a new count",
+			"labelRequest": "Select + to create a new label request",
+			"markdown": "Select + to create a new markdown",
+			"productRequest": "Select + to create a new approval request",
+			"shipment": "Select + to create a new shipment"
+		},
+		"noIncompleteTransactions": {
+			"untyped": "There are no incomplete transactions",
+			"typed": "There are no incomplete %{typename} transactions"
+		},
+		"noItemsToDisplay": "There are no items to display",
+		"noItemsMatchSearch": "No items match your search",
+		"invalidBarcodeForXact": "This transaction is complete and cannot accept additional products."
+	},
+	"sales": {
+		"title": "Sales",
+		"menuTiles": {
+			"customers": "Customers",
+			"preTickets": "Pre-Tickets",
+			"checkout": "Checkout",
+			"dashboard": "Dashboard",
+			"counterSales": "Sales Orders"
+		},
+		"screens": {
+			"preTicketList": {
+				"title": "Pre-Tickets"
+			},
+			"preTicketDetail": {
+				"title": "Pre-Ticket"
+			},
+			"preTicketEntryDetail": {
+				"title": "Pre-Ticket Entry"
+			},
+			"checkout": {
+				"title": "Checkout"
+			},
+			"checkoutItemDetail": {
+				"title": "Ticket Line"
+			},
+			"dashboard": {
+				"title": "Dashboard"
+			},
+			"salesOrderList": {
+				"title": "Sales Orders",
+				"searchPlaceholder": "Scan product or enter order number"
+			},
+			"salesFilter": {
+				"title": "Filter By",
+				"orderDate": "Order Date"
+			},
+			"salesOrderDetail": {
+				"newTitle": "Order %{key}",
+				"entryTitle": "Sale Entry",
+				"command": "sell",
+				"confirmValorise": "Do you wish to valuate the sale items?",
+				"deleteOrderError": "Failure deleting sales order\n%{message}",
+				"valorise": "Valuate"
+			},
+			"salesOrderMemo": {
+				"placeholder": "Enter comments for the sale"
+			},
+			"salesOrderValidation": {
+				"title": "Counter Sale Validation",
+				"confirmSubmit": "Do you confirm the sale?",
+				"packageCount": "Enter the package count",
+				"driver": "Driver",
+				"driverPlaceholder": "Enter the carrier driver",
+				"registration": "Registration",
+				"registrationPlaceholder": "Enter the registration"
+			},
+			"customerList": {
+				"searchPrompt": "Search for customers"
+			},
+			"customerDetail": {
+				"title": "Customer Profile"
+			}
+		},
+		"components": {
+			"checkoutGrid": {
+				"add": "Add",
+				"customer": "Customer",
+				"discount": "Discount",
+				"payment": "Payment"
+			},
+			"checkoutItemDetails": {
+				"product": "Product",
+				"unitPrice": "Unit Price"
+			},
+			"checkoutTicketHeader": {
+				"tapCustomer": "Tap 'Customer' to add to ticket"
+			},
+			"checkoutTicketList": {
+				"scanProduct": "Start scanning products"
+			},
+			"salesOrderList": {
+				"selectCustomer": "Select a customer",
+				"confirmTitle": "New Order",
+				"confirmMessage": "Do you confirm the creation of the order for '%{name}'?",
+				"createOrderError": "Failure creating sales order\n%{message}"
+			},
+			"customerTabView": {
+				"routes": {
+					"profile": "Profile",
+					"orders": "Orders",
+					"history": "History"
+				}
+			}
+		}
+	},
+	"reference": {
+		"title": "Reference",
+		"menuTiles": {
+			"products": "Products",
+			"lots": "Lots",
+			"locations": "Locations",
+			"suppliers": "Suppliers",
+			"customers": "Customers",
+			"carriers": "Carriers",
+			"routes": "Routes",
+			"vehicleTypes": "Vehicle Types",
+			"inventories": "Inventories",
+			"transactions": "Transactions"
+		}
+	},
+	"screens": {
+		"settings": {
+			"title": "Settings",
+			"shortTitle": "Settings",
+			"menuItems": {
+				"general": "General",
+				"database": "Database",
+				"inventory": "Transactions",
+				"scanning": "Scanning",
+				"printers": "Printers",
+				"about": "About",
+				"permissions": "Permissions",
+				"signOut": "Sign Out"
+			},
+			"chooseEntity": "Choose an entity"
+		},
+		"generalSettings": {
+			"title": "General"
+		},
+		"databaseSettings": {
+			"title": "Database"
+		},
+		"scanningSettings": {
+			"title": "Scanning",
+			"menuItems": {
+				"general": "Configuration",
+				"dataWedge": "DataWedge",
+				"testing": "Scan Testing"
+			}
+		},
+		"scanningConfig": {
+			"title": "Configuration",
+			"camera": "Camera",
+			"unitech2D": "Unitech 2D Imager",
+			"unitechBluetooth": "Unitech Bluetooth",
+			"dataWedge": "Zebra DataWedge"
+		},
+		"scanTesting": {
+			"title": "Scan Testing",
+			"simulated": "Simulated",
+			"lastBarcodeType": "Last Barcode Type",
+			"lastScan": "Last Scan",
+			"lastGTIN": "Last GTIN",
+			"lastLot": "Last Lot",
+			"lastSerialNumber": "Last Serial Number",
+			"lastProductionDate": "Last Production Date",
+			"lastBestBeforeDate": "Last Best Before Date",
+			"lastExpiryDate": "Last Expiry Date"
+		},
+		"about": {
+			"title": "About",
+			"user": "User",
+			"device": "Device",
+			"middleware": "Middleware",
+			"application": "Application",
+			"copyright": "©2024 Aurea Retail",
+			"copyright2": "Aurea is an ESW Capital Group company",
+			"unknown": "Unknown",
+			"system": "System is %{system}",
+			"currentStatus": "Current status is %{status}",
+			"interval": "Checking every %{interval} seconds",
+			"screen": "Screen is",
+			"validate": "Validate middleware"
+		},
+		"permissions": {
+			"title": "Permissions",
+			"summary": "Here you can grant or deny permissions that %{appName} has to access your data",
+			"results": {
+				"unavailable": "Unavailable",
+				"available": "Available",
+				"granted": "Granted",
+				"denied": "Denied"
+			},
+			"types": {
+				"camera": {
+					"name": "Camera",
+					"description": "%{appName} uses your camera for barcode scanning"
+				},
+				"bluetooth": {
+					"name": "Bluetooth",
+					"description": "%{appName} uses Bluetooth to connect to barcode scanning devices and printers"
+				}
+			}
+		},
+		"printerSettings": {
+			"title": "Printers"
+		},
+		"getStarted": {
+			"letsGetStarted": "Let's Get Started"
+		},
+		"enterUrl": {
+			"signIn": "Sign in",
+			"enterYourSystemUrl": "Enter your System URL"
+		},
+		"login": {
+			"username": "Username",
+			"password": "Password",
+			"failedToConnect": "Failed to connect",
+			"failedToSignOut": "Failed to sign out",
+			"invalidCredentials": "Invalid Credentials"
+		},
+		"signIn": {
+			"username": "Username",
+			"password": "Password"
+		},
+		"auth": {
+			"signIn": "Sign in to %{system}",
+			"enterYourCredentials": "Enter your credentials",
+			"failedToConnect": "Failed to connect",
+			"switchSystems": "Tap here to switch systems",
+			"singleEntityName": "Générix (mono-entité)"
+		},
+		"entity": {
+			"selectEntity": "Select Entity",
+			"entity": "Entity",
+			"noEntitiesFound": "No entities found",
+			"entityName": "Entity name",
+			"searchPlaceholder": "Search by name or code"
+		},
+		"sortOptions": {
+			"title": "Sort By",
+			"listedAToZ": "Listed A to Z",
+			"listedZToA": "Listed Z to A",
+			"highestFirst": "Highest first",
+			"lowestFirst": "Lowest first",
+			"latestFirst": "Latest first",
+			"earliestFirst": "Earliest first",
+			"lastScan": "Last Scan",
+			"barcode": "Barcode",
+			"product": "Product Code",
+			"reception": "Receipt",
+			"receiptDate": "Receipt Date",
+			"delivery": "Picking Order",
+			"deliveryCarton": "Carton",
+			"deliveryReserveOrder": "Reserve Order",
+			"deliveryDate": "Scheduled Delivery",
+			"supplier": "Supplier ID",
+			"supplierName": "Supplier Name",
+			"supplierRef": "Supplier Reference",
+			"shipmentDate": "Shipment Date",
+			"customer": "Customer ID",
+			"customerName": "Customer Name",
+			"carrier": "Carrier",
+			"route": "Route",
+			"salesOrder": "Sales Order",
+			"orderDate": "Order Date",
+			"return": "Return",
+			"returnDate": "Return Date",
+			"location": "Location",
+			"lineNumber": "Line Number"
+		},
+		"printerSelect": {
+			"title": "%{name} Printer",
+			"selectPrinter": "Select a printer"
+		},
+		"routeFormatSelect": {
+			"title": "Routes",
+			"selectRoute": "Select a Route"
+		},
+		"barcodeSelector": {
+			"title": "Product Barcodes",
+			"selectFormat": "Select a barcode"
+		},
+		"kioskMain": {
+			"scanBarcode": "Scan a barcode to obtain the price",
+			"productNotFound": "Product not found"
+		}
+	},
+	"components": {
+		"offlineDatabaseDetails": {
+			"entry": {
+				"zero": "Zero entries",
+				"one": "1 entry",
+				"other": "%{formattedCount} entries"
+			},
+			"noTablesFound": "There are no tables in the database.",
+			"title": "Local Data"
+		},
+		"logoHeader": {
+			"online": "Online",
+			"offline": "Offline",
+			"connected": "Connected",
+			"saveButton": "Save",
+			"selectButton": "Select"
+		},
+		"clearableUrlInput": {
+			"exampleUrl": "https://aurearetail.com"
+		},
+		"printerView": {
+			"shipment": {
+				"title": "Shipment Labels",
+				"copies": "Copies"
+			},
+			"transport": {
+				"title": "Transport Labels",
+				"copies": "Copies"
+			}
+		},
+		"flyerMenu": {
+			"action": "Actions",
+			"next": "Next",
+			"previous": "Previous",
+			"print": "Print",
+			"sort": "Sort",
+			"sorted": "Sorted",
+			"filter": "Filter",
+			"filtered": "Filtered",
+			"approve": "Approve",
+			"add": "Add",
+			"lock": "Lock",
+			"unlock": "Unlock",
+			"validate": "Validate",
+			"create": "Create",
+			"confirm": "Confirm",
+			"save": "Save",
+			"submit": "Submit",
+			"details": "Details",
+			"reopen": "Reopen",
+			"new": "New",
+			"delete": "Delete",
+			"retry": "Retry",
+			"clear": "Clear"
+		},
+		"inventoryActionSheet": {
+			"title": "Select an action",
+			"titleAlt": "Select a transaction to create",
+			"new": "New",
+			"newVowel": "New",
+			"newFeminine": "New"
+		},
+		"customerActionSheet": {
+			"title": "Select an action",
+			"options": {
+				"updateProfile": "Profile update",
+				"newOrder": "New order",
+				"notify": "VIP notification"
+			},
+			"notify": {
+				"message": "'%{user}' a signalé que le client VIP '%{customer}' est actuellement en visite dans le lieu de vente '%{entity}'"
+			}
+		},
+		"counter": {
+			"buttons": {
+				"save": "Save",
+				"cancel": "Cancel"
+			}
+		},
+		"printerList": {
+			"noPrintersFound": "There are no printers"
+		},
+		"routeList": {
+			"noRoutesFound": "There are no routes"
+		},
+		"routeSelector": {
+			"title": "Route",
+			"selectRoute": "Select a Route"
+		},
+		"printerSelector": {
+			"selectPrinter": "Select a printer",
+			"printers": {
+				"shipment": "Shipment",
+				"transport": "Transport"
+			}
+		},
+		"barcodeSelector": {
+			"title": "Barcode",
+			"selectFormat": "Select a barcode"
+		},
+		"customTextField": {
+			"invalidEntry": "Invalid entry"
+		},
+		"backgroundTaskInterval": {
+			"title": "Background Tasks",
+			"description": "How often should background tasks run?",
+			"units": "Minutes (5-60)",
+			"invalidEntry": "Invalid entry (5-60)"
+		},
+		"displayMode": {
+			"title": "Display Mode",
+			"full": "Full",
+			"compact": "Compact"
+		},
+		"barcodeSimulator": {
+			"simulator": "Enable Simulator",
+			"enterBarcode": "Enter barcode"
+		},
+		"offlineListHeading": {
+			"resultLimit": "Results limited to %{count} %{pluralObjectName}",
+			"noResult": "No %{pluralObjectName} match your search",
+			"noneAvailable": "No %{pluralObjectName} are available"
+		},
+		"connectionDisplay": {
+			"label": "Network is",
+			"types": {
+				"unknown": "Unknown",
+				"wifi": "Wi-Fi",
+				"ethernet": "Ethernet",
+				"cellular": "Cellular",
+				"wimax": "WiMAX",
+				"vpn": "VPN"
+			}
+		},
+		"orderInfoHeader": {
+			"itemsTo": "items to %{command}",
+			"itemTo": "item to %{command}",
+			"productsTo": "products to %{command}",
+			"productTo": "product to %{command}",
+			"receiptCompleted": "This receipt is completed",
+			"pickingCompleted": "This picking is completed",
+			"submissionError": "%{orderType} Error"
+		},
+		"orderItemCounter": {
+			"selectQty": "Select Quantity",
+			"unit": "Unit (U)",
+			"numeratorDefault": "-",
+			"denoninatorDefault": "--"
+		},
+		"orderInfo": {
+			"orderInfoTitle": "Origin Event",
+			"unknown": "Unknown",
+			"orderedBy": "Ordered By",
+			"orderedTo": "Ordered To",
+			"deliveredBy": "Delivered By",
+			"deliveredTo": "Delivered To",
+			"supplier": "Supplier",
+			"customer": "Customer",
+			"reference": "Reference",
+			"orderUnknown": "Order Unknown",
+			"orderDateUnknown": "Date Unknown",
+			"deliveryDate": "Delivery Date",
+			"carrierName": "Carrier Name",
+			"receivedBy": "Received By",
+			"preparedBy": "Prepared By"
+		},
+		"transactionLifespan": {
+			"title": "Transaction Lifespan",
+			"description": "Period that closed transactions are kept before automatic deletion",
+			"units": "Days",
+			"deleteNowLink": "Click here to delete now",
+			"deleteConfirmTitle": "Delete Now",
+			"deleteConfirmText": "Are you sure you want to delete all closed transactions?"
+		},
+		"clearCache": {
+			"title": "Application Caches",
+			"deleteSettingsCache": "Tap here to clear the settings cache",
+			"deleteDataCache": "Tap here to clear the data cache",
+			"deleteConfirmTitle": "Clear Cache",
+			"confirmSettingsCacheDelete": "Are you sure you want to clear the settings cache?",
+			"confirmDataCacheDelete": "Are you sure you want to clear the data cache?"
+		},
+		"productDetail": {
+			"tabs": {
+				"main": "Main",
+				"stock": "Stock",
+				"custom": "Custom",
+				"substitutes": "Substitutes"
+			}
+		},
+		"numberInputCounter": {
+			"warningTitle": "WARNING",
+			"cannotAdd": "You cannot increment the count for this product."
+		}
+	},
+	"errors": {
+		"invalidApiPath": "This app has an invalid API path. Please contact an administrator.",
+		"invalidDownloadPath": "This app has an invalid product download path. Please contact an administrator.",
+		"serverNotResponding": "The server is not responding properly",
+		"unableToConnectToServer": "Unable to connect to Server",
+		"unauthorizedAccess": "Unauthorized access to server",
+		"unauthorizedSignOff": "You have been signed out due to unauthorized access",
+		"displayErrorTitle": "WARNING",
+		"receivingError": "Receiving error (%{orderKey}): %{message}",
+		"deliveryError": "Picking error (%{orderKey}): %{message}",
+		"returnError": "Return error (%{orderKey}): %{message}",
+		"counterSalesError": "Counter sales error (%{orderKey}): %{message}",
+		"productNotPartOfReceipt": "The scanned product is not included in this receipt",
+		"productNotPartOfDelivery": "The scanned product is not included in this picking order",
+		"productNotPartOfReturn": "The scanned product is not included in this return",
+		"productLotCannotBeProcessed": "Product (%{productCode}) Lot (%{lot}) cannot be processed here",
+		"productCannotBeProcessed": "Product %{productCode} cannot be processed here",
+		"cannotExecuteServerNotResponding": "Cannot execute %{operation} because the server is not responding",
+		"offlineProductDataUnavailable": "Data for offline products is unavailable",
+		"productNotExpected": "Product %{productCode} is not expected to be stored at location %{locationCode}.",
+		"locationInvalid": "Location %{locationCode} is not valid for %{object}.",
+		"locationCannotBeLocated": "Location %{location} cannot be located in the system.",
+		"barcodeCannotBeLocated": "Barcode %{barcode} cannot be located in the system.",
+		"invalidBarcode": "Invalid Barcode Found"
+	},
+	"barcodeNotFound": "Barcode Not Found",
+	"unknownProduct": "unknown product",
+	"selectProduct": "Please select the product",
+	"matchBarcode": "match the barcode"
+}

@@ -43,7 +43,7 @@ const TranslationForm = () => {
   const [namingPattern, setNamingPattern] = useState(
     '{originalFileName}_{languageCode}',
   )
-  const [enableAnalytics, setEnableAnalytics] = useState(true)
+  const [enableAnalytics, setEnableAnalytics] = useState(false)
 
   const [country, setCountry] = useState('')
 
@@ -159,29 +159,59 @@ const TranslationForm = () => {
       })
   }
 
-  async function translateJson(json, languageName) {
-    // Check if the input is an object
-    if (typeof json !== 'object') {
-      // If not an object, return the value directly (non-translatable)
-      return json
+  function createBatches(json, batchSize = 80) {
+    const batches = []
+    let currentBatch = {}
+
+    function addBatch(batch) {
+      if (Object.keys(batch).length > 0) {
+        batches.push(batch)
+      }
     }
 
-    // Determine if it's an array or an object
-    const isArray = Array.isArray(json)
-    const translatedData = isArray ? [] : {}
+    function traverse(obj, path = []) {
+      const keys = Object.keys(obj)
+      for (const key of keys) {
+        const value = obj[key]
+        const newPath = path.concat(key)
 
-    // Iterate through the keys or indices in the JSON object or array
-    for (const key in json) {
-      if (json.hasOwnProperty(key)) {
-        const value = json[key]
-
-        if (typeof value === 'object') {
-          // If the value is an object, recursively translate it
-          translatedData[key] = await translateJson(value, languageName)
+        if (typeof value === 'object' && !Array.isArray(value)) {
+          traverse(value, newPath)
         } else {
-          translatedData[key] = await translateWithChatGPT(value, languageName)
-          setProgress((progress) => progress + 100 / totalKeysCount)
+          currentBatch[newPath.join('.')] = value
+          if (Object.keys(currentBatch).length >= batchSize) {
+            addBatch(currentBatch)
+            currentBatch = {}
+          }
         }
+      }
+    }
+
+    traverse(json)
+    addBatch(currentBatch)
+
+    return batches
+  }
+
+  async function translateJson(json, languageName) {
+    const batches = createBatches(json)
+    const translatedBatches = await Promise.all(
+      batches.map((batch) => translateWithChatGPT(batch, languageName)),
+    )
+
+    // Reconstruct the translated JSON
+    const translatedData = {}
+    for (const batch of translatedBatches) {
+      for (const [key, value] of Object.entries(batch)) {
+        const keys = key.split('.')
+        let current = translatedData
+        for (let i = 0; i < keys.length - 1; i++) {
+          if (!current[keys[i]]) {
+            current[keys[i]] = {}
+          }
+          current = current[keys[i]]
+        }
+        current[keys[keys.length - 1]] = value
       }
     }
 
@@ -332,7 +362,7 @@ const TranslationForm = () => {
     !englishFile ||
     !targetLanguages.length ||
     isTranslating ||
-    totalKeysCount > TOTAL_KEYS_COUNT_LIMIT ||
+    // totalKeysCount > TOTAL_KEYS_COUNT_LIMIT ||
     !isValidNamingPattern
 
   return (

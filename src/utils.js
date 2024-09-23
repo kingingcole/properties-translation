@@ -1,6 +1,6 @@
-import { parse } from 'dot-properties'; // Import dot-properties for parsing .properties files
-import JSZip from 'jszip';
-import OpenAI from 'openai';
+import { parse } from 'dot-properties' // Import dot-properties for parsing .properties files
+import JSZip from 'jszip'
+import OpenAI from 'openai'
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -34,23 +34,34 @@ export async function readAndParseEnglishFile(englishFile, type) {
   return ''
 }
 
-export async function translateWithChatGPT(text, targetLanguage) {
+export async function translateWithChatGPT(batch, targetLanguage) {
+  const prompt = `
+  Translate the following text to ${targetLanguage}. Return ONLY the translated text.
+
+  ${JSON.stringify(batch)}
+  `
+
   const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo-16k',
+    model: 'gpt-4-turbo',
     messages: [
       {
         role: 'user',
-        content: `Translate the following English text to ${targetLanguage}: ${text}`,
+        content: prompt,
       },
     ],
     temperature: 1,
-    max_tokens: 256,
+    max_tokens: 4096,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
   })
 
-  return response.choices[0].message.content
+  const translatedText = response.choices[0].message.content
+  try {
+    return JSON.parse(translatedText)
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 export function generatePropertyFile(properties) {
@@ -244,8 +255,8 @@ export function generateUniqueIdentifier() {
   return identifier
 }
 
-export const START_TRANSLATION = "START TRANSLATION"
-export const TRANSLATION_SUCCESS = "TRANSLATION SUCCESS"
-export const TRANSLATION_FAILURE = "TRANSLATION FAILURE"
+export const START_TRANSLATION = 'START TRANSLATION'
+export const TRANSLATION_SUCCESS = 'TRANSLATION SUCCESS'
+export const TRANSLATION_FAILURE = 'TRANSLATION FAILURE'
 
 /***********************************************/

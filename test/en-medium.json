@@ -1,0 +1,15 @@
+{
+  "user": {
+    "name": "John Doe",
+    "age": 30,
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "country": "USA"
+    }
+  },
+  "messages": {
+    "welcome": "Welcome to our service!",
+    "goodbye": "Thank you for visiting!"
+  }
+}

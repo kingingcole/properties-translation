@@ -1,0 +1,27 @@
+{
+  "company": {
+    "name": "Tech Innovations",
+    "departments": {
+      "engineering": {
+        "teams": {
+          "frontend": {
+            "members": ["Alice", "Bob", "Charlie"],
+            "projects": ["Website Redesign", "Mobile App"]
+          },
+          "backend": {
+            "members": ["David", "Eve"],
+            "projects": ["API Development", "Database Migration"]
+          }
+        }
+      },
+      "marketing": {
+        "campaigns": {
+          "summerSale": {
+            "description": "Big discounts on all products!",
+            "duration": "June to August"
+          }
+        }
+      }
+    }
+  }
+}

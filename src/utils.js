@@ -33,6 +33,31 @@ export async function readAndParseEnglishFile(englishFile, type) {
   }
   return ''
 }
+export async function translateJSONWithNLPTranslation(batch, targetLanguage) {
+  const data = new FormData()
+  data.append('from', 'en')
+  data.append('to', targetLanguage)
+  data.append('json', JSON.stringify(batch))
+  console.log(JSON.stringify(batch).length)
+
+  const response = await fetch(
+    'https://nlp-translation.p.rapidapi.com/v1/jsontranslate',
+    {
+      method: 'POST',
+      body: data,
+      headers: {
+        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_NLP_TRANSLATION_API_KEY,
+        'X-RapidAPI-Host': 'nlp-translation.p.rapidapi.com',
+        Accept: 'application/json',
+      },
+    },
+  )
+  const responseJSON = await response.json()
+  console.log(responseJSON)
+  return responseJSON.translated_json
+    ? JSON.parse(responseJSON.translated_json[targetLanguage])
+    : null
+}
 
 export async function translateWithChatGPT(batch, targetLanguage) {
   const prompt = `

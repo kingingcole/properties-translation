@@ -1,10 +1,19 @@
-const ProgressBar = ({ progress }) => {
+const ProgressBar = ({ progress, totalTimeInSeconds }) => {
+  let completionMessage
+
+  if (totalTimeInSeconds < 60) {
+    completionMessage = `Task Completed in ${totalTimeInSeconds.toFixed(1)} seconds`
+  } else {
+    const minutes = Math.floor(totalTimeInSeconds / 60)
+    const seconds = Math.round(totalTimeInSeconds % 60)
+    completionMessage = `Task Completed in ${minutes} minute${minutes !== 1 ? 's' : ''} and ${seconds} second${seconds !== 1 ? 's' : ''}`
+  }
   return (
     <div className="relative pt-1">
       <div className="flex mb-2 items-center justify-between">
         <div>
           <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">
-            {progress < 100 ? 'Task in Progress' : 'Task Completed'}
+            {progress < 100 ? 'Task in Progress' : completionMessage}
           </span>
         </div>
         <div className="text-right">

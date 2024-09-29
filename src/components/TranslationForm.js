@@ -35,6 +35,7 @@ const TranslationForm = () => {
 
   const [errorMessage, setErrorMessage] = useState('')
   const [progress, setProgress] = useState(0)
+  const [totalTimeInSeconds, setTotalTimeInSeconds] = useState(0)
 
   const [fileType, setFileType] = useState('')
   const [totalKeysCount, setTotalKeysCount] = useState(0)
@@ -112,18 +113,28 @@ const TranslationForm = () => {
   }
 
   const translateAndDownloadJSON = async (taskId) => {
-    // generate new task id
     setIsTranslating(true)
     setErrorMessage('')
     setProgress(0)
+    setTotalTimeInSeconds(0)
+
+    const startTime = Date.now()
 
     const englishContent = await readAndParseEnglishFile(englishFile, 'json')
+    const batches = createBatches(englishContent)
+    const totalBatches = batches.length * targetLanguages.length
+    let completedBatches = 0
+
+    const updateProgress = (batchesCompleted) => {
+      completedBatches += batchesCompleted
+      setProgress((completedBatches / totalBatches) * 100)
+      const currentTime = Date.now()
+      setTotalTimeInSeconds((currentTime - startTime) / 1000)
+    }
 
     const translatedFilesObject = {}
-    const totalLanguages = targetLanguages.length
-    let completedLanguages = 0
     const failedLanguages = []
-    
+
     for (const languageCode of targetLanguages) {
       try {
         const language = supportedLanguages.find(
@@ -133,27 +144,28 @@ const TranslationForm = () => {
         const translatedContent = await translateJson(
           englishContent,
           language.code,
+          updateProgress,
         )
-        
+
         translatedFilesObject[languageCode] = translatedContent
-        
-        completedLanguages++
-        setProgress((completedLanguages / totalLanguages) * 100)
       } catch (error) {
         console.error(`Error translating to ${languageCode}:`, error)
         failedLanguages.push(languageCode)
-        
-        // Continue with the next language
-        completedLanguages++
-        setProgress((completedLanguages / totalLanguages) * 100)
+
+        // Update progress for the failed language
+        updateProgress(batches.length)
       }
     }
+
+    const endTime = Date.now()
+    const finalTotalTimeInSeconds = (endTime - startTime) / 1000
 
     if (Object.keys(translatedFilesObject).length > 0) {
       logAnalytics(TRANSLATION_SUCCESS, {
         taskId,
         totalKeysCount,
         failedLanguages,
+        totalTimeInSeconds: finalTotalTimeInSeconds,
       })
 
       createZipFile(
@@ -162,19 +174,25 @@ const TranslationForm = () => {
         englishFile.name,
         namingPattern,
       )
-      
+
       if (failedLanguages.length > 0) {
-        setErrorMessage(`Translation completed, but failed for the following languages: ${failedLanguages.join(', ')}`)
+        setErrorMessage(
+          `Translation completed but failed for the following languages: ${failedLanguages.join(
+            ', ',
+          )}`,
+        )
       }
     } else {
-      setErrorMessage('Translation failed for all languages.')
+      setErrorMessage(`Translation failed for all languages.`)
       logAnalytics(TRANSLATION_FAILURE, {
         taskId,
         failedLanguages,
+        totalTimeInSeconds: finalTotalTimeInSeconds,
       })
     }
 
     setIsTranslating(false)
+    setTotalTimeInSeconds(finalTotalTimeInSeconds)
   }
 
   function createBatches(json, maxCharacters = 5_000) {
@@ -221,25 +239,24 @@ const TranslationForm = () => {
     return batches
   }
 
-  async function translateJson(json, languageName) {
+  async function translateJson(json, languageName, updateProgress) {
     const batches = createBatches(json)
     const translatedBatches = []
 
-    // Process batches in pairs
     for (let i = 0; i < batches.length; i += 2) {
       const batch1 = batches[i]
       const batch2 = i + 1 < batches.length ? batches[i + 1] : null
 
       let results
       if (batch2) {
-        // If we have two batches, translate them concurrently
         results = await Promise.all([
           translateJSONWithNLPTranslation(batch1, languageName),
-          translateJSONWithNLPTranslation(batch2, languageName)
+          translateJSONWithNLPTranslation(batch2, languageName),
         ])
+        updateProgress(2)
       } else {
-        // If we only have one batch left, translate it alone
         results = [await translateJSONWithNLPTranslation(batch1, languageName)]
+        updateProgress(1)
       }
 
       translatedBatches.push(...results)
@@ -248,17 +265,12 @@ const TranslationForm = () => {
     // Reconstruct the translated JSON
     const translatedData = {}
     for (const batch of translatedBatches) {
-      if (!batch) {
-        continue
-      }
-
+      if (!batch) continue
       for (const [key, value] of Object.entries(batch)) {
         const keys = key.split('.')
         let current = translatedData
         for (let i = 0; i < keys.length - 1; i++) {
-          if (!current[keys[i]]) {
-            current[keys[i]] = {}
-          }
+          if (!current[keys[i]]) current[keys[i]] = {}
           current = current[keys[i]]
         }
         current[keys[keys.length - 1]] = value
@@ -553,7 +565,10 @@ const TranslationForm = () => {
           </small>
         )}
         {(isTranslating || progress > 0) && !errorMessage.length && (
-          <ProgressBar progress={progress} />
+          <ProgressBar
+            progress={progress}
+            totalTimeInSeconds={totalTimeInSeconds}
+          />
         )}
       </form>
       {/* Tooltip for naming pattern help */}

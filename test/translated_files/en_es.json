@@ -1,0 +1,1417 @@
+{
+  "unknown": "Desconocido",
+  "next": "Próximo",
+  "connect": "Conectar",
+  "save": "Ahorrar",
+  "appName": "Tienda Conectar",
+  "searchForProducts": "Buscar productos",
+  "configureScanner": "Por favor configure el escáner",
+  "categories": "Categorías",
+  "products": "Productos",
+  "noCategoriesFound": "No se encontraron categorías",
+  "noProductsFound": "No se encontraron productos",
+  "loading": "Cargando...",
+  "scan": "Escanear",
+  "rescan": "Volver a escanear",
+  "enterBarcodeNumberManually": "Introduzca el código de barras manualmente",
+  "dateFormat": "Formato de fecha",
+  "version": "Versión %{version}",
+  "yesterday": "Ayer",
+  "today": "Hoy",
+  "tomorrow": "Mañana",
+  "failedToSetSorting": "No se pudo establecer la clasificación",
+  "supplier": "Proveedor",
+  "productType": "Tipo de producto",
+  "productWeight": "Peso del producto",
+  "productHierarchy": "Jerarquía de productos",
+  "typeHere": "Escribe aquí...",
+  "selectDepot": "Seleccionar Depósito",
+  "quantities": "Cantidades",
+  "unit": "Unidad",
+  "name": "Nombre",
+  "value": "Valor",
+  "equivalent": "Equivalente",
+  "partner": "Pareja",
+  "filter": "Filtrar",
+  "price": "Precio",
+  "business": "Negocio",
+  "guarantee": "Garantizar",
+  "productManager": "Gerente de producto",
+  "clearAll": "Limpiar todo",
+  "apply": "Aplicar",
+  "productNotFound": "Producto no encontrado",
+  "warning": "ADVERTENCIA",
+  "confirm": "CONFIRMAR",
+  "pleaseScanAgain": "Escanee nuevamente o ingrese el número de código de barras manualmente.",
+  "scanAgain": "Escanear de nuevo",
+  "result": "Resultado",
+  "enterAValue": "Introduzca un valor",
+  "selectPriceRange": "Seleccione un rango de precios",
+  "businessDescription": "Seleccione una o más empresas",
+  "search": "Buscar",
+  "guaranteeDescription": "Introduzca una garantía (1-3)",
+  "productManagerDescription": "Introduzca un gerente de producto",
+  "operation": "Operación",
+  "operationDescription": "Seleccione una o más operaciones",
+  "toBePacked": "¿Para ser embalado?",
+  "toBePackedDescription": "¿El producto está empaquetado?",
+  "customerCodeDescription": "Introduzca un código de cliente",
+  "customerNameDescription": "Introduzca un nombre de cliente",
+  "shipmentDateDescription": "Introduzca una fecha de envío",
+  "routeDescription": "Introducir una ruta",
+  "carrierDescription": "Introduzca un transportista",
+  "variableWeight": "¿Peso variable?",
+  "variableWeightDescription": "¿El producto es de peso variable?",
+  "no": "No",
+  "yes": "Sí",
+  "failedToFetchProduct": "No se pudo obtener el producto",
+  "notAvailable": "No disponible",
+  "dataNotAvailable": "Datos no disponibles temporalmente",
+  "catalogReference": "Referencia del catálogo",
+  "catalogReferenceDescription": "Introduzca una referencia de catálogo",
+  "noProductFound": "No se encontró ningún producto. Intente con un código de barras diferente.",
+  "scanProductMSG": "Escanee sus artículos...",
+  "required": "requerido",
+  "requestTimedOut": "Solicitud agotada",
+  "noImagesFound": "No se encontraron imágenes",
+  "noDepotsFound": "No se encontraron depósitos",
+  "noCountersFound": "No se encontraron contadores",
+  "customer": "Cliente",
+  "customerCode": "Código de cliente",
+  "shipmentDate": "Fecha de envío",
+  "route": "Ruta",
+  "carrier": "Transportador",
+  "location": "Ubicación",
+  "productFamily": "Familia de productos",
+  "productCode": "Código del producto",
+  "detailsUnavail": "Detalles no disponibles",
+  "cancel": "Cancelar",
+  "ok": "DE ACUERDO",
+  "substitution": "Sustitución",
+  "chainage": "Cadena",
+  "designation": "Designación",
+  "stockQuantity": "Cantidad de existencias",
+  "availableQuantity": "Cantidad disponible",
+  "replenishmentProvider": "Reposición. proveedor",
+  "customerReservation": "Reserva de clientes",
+  "clearFiltersTitle": "Limpiar filtros",
+  "clearFiltersMsg": "¿Está seguro de restablecer los valores del filtro a los valores predeterminados?",
+  "addNewItemMsg": "Este artículo no forma parte de la lista.",
+  "bluetooth": {
+    "devices": "Dispositivos Bluetooth",
+    "device": {
+      "status": {
+        "disconnecting": "Desconectando",
+        "disconnected": "Desconectado",
+        "connecting": "Conectando",
+        "connected": "Conectado"
+      }
+    },
+    "enabled": {
+      "true": "Bluetooth está activado",
+      "false": "Bluetooth está APAGADO"
+    }
+  },
+  "scanningItem": "Búsqueda de productos",
+  "barcodeDataError": "Configure el valor del código de barras desde la opción de configuración del escáner.",
+  "itemScanError": "La cantidad escaneada es mayor que la cantidad esperada",
+  "itemScanError2": "El comando no está bloqueado para el usuario. Escaneo prohibido. Bloquee primero el pedido.",
+  "itemScanError3": "Comando no encontrado",
+  "line": "Línea",
+  "lines": "Pauta",
+  "systems": {
+    "ACE": "AS",
+    "SPIRAL": "Espiral",
+    "JTOB": "JtoB",
+    "PROGEST": "Progest"
+  },
+  "alerts": {
+    "delete": {
+      "title": "Eliminar %{type}",
+      "noTypeTitle": "Borrar",
+      "confirmation": "¿Estás seguro de que deseas eliminar '%{name}'?",
+      "buttons": {
+        "positive": "Borrar",
+        "negative": "Cancelar"
+      }
+    },
+    "submit": {
+      "title": "Entregar",
+      "buttons": {
+        "positive": "Entregar",
+        "negative": "Cancelar"
+      }
+    },
+    "signOut": {
+      "title": "Desconectar",
+      "confirmation": "¿Estás seguro que deseas cerrar sesión?",
+      "buttons": {
+        "positive": "Desconectar",
+        "negative": "Cancelar"
+      }
+    },
+    "lockItems": {
+      "title": "Cerrar",
+      "confirmation": "¿Está seguro de que desea bloquear este elemento?",
+      "confirmationMultiple": "¿Está seguro de que desea bloquear los elementos seleccionados?",
+      "buttons": {
+        "positive": "Cerrar",
+        "negative": "Cancelar"
+      }
+    },
+    "unlockItem": {
+      "title": "Descubrir",
+      "confirmation": "¿Quieres desbloquear este evento? Esto eliminará todos los recuentos no enviados.",
+      "buttons": {
+        "positive": "Descubrir",
+        "negative": "Cancelar"
+      }
+    }
+  },
+  "picking": {
+    "tabs": {
+      "new": "Nuevo",
+      "processing": "Tratamiento",
+      "completed": "Completo"
+    },
+    "status": {
+      "delivered": "Entregado"
+    },
+    "validationError": "Error de validación",
+    "validationLbl": "Esperando la subida",
+    "assignedToMe": "Asignado a mí",
+    "assignedToAnyone": "Asignado a cualquiera",
+    "noPickingOrdersFound": "No se encontraron órdenes de picking",
+    "downloadingOrders": "Descarga de pedidos",
+    "noOrderLinesFound": "No se encontraron líneas de pedido",
+    "lockByOtherMsg": "Esta orden de selección está bloqueada por",
+    "memoDlgTitle": "Memorándum interno",
+    "selectOrder": "Seleccionar pedido",
+    "packageQty": "Número de paquetes",
+    "screens": {
+      "picking": {
+        "title": "Cosecha"
+      },
+      "orderDetails": {
+        "itemsToPick": "Artículos para elegir",
+        "itemToPick": "Artículo para elegir"
+      },
+      "orderItemDetails": {
+        "refreshProductDetails": "Actualizar detalles del producto"
+      },
+      "orderVerification": {
+        "title": "Validación de selección",
+        "deliveredTitle": "Detalles del pedido entregado",
+        "summary": "Resumen",
+        "shipmentNote": "Envío",
+        "transportLabel": "Transporte",
+        "carrier": "Transportador",
+        "shipmentDate": "Fecha de envío"
+      },
+      "orderValidation": {
+        "title": "Validar pedido",
+        "description": "¿Desea validar este pedido?",
+        "printDocuments": "¿Imprimir documentos?"
+      },
+      "printOrder": {
+        "title": "Imprimir documentos"
+      },
+      "orderInfo": {
+        "orderInfoTitle": "Información del pedido",
+        "lblOrderBy": "Ordenar por:",
+        "lblDeliverTo": "Entregar a:",
+        "lblShipment": "Envío",
+        "lblAddress": "DIRECCIÓN:",
+        "lblDate": "Fecha:",
+        "lblTime": "Tiempo:",
+        "lblRouteName": "Nombre de la ruta:",
+        "lblCarrierName": "Nombre del transportista:",
+        "lblAssignee": "Cesionario:",
+        "lblPreparedBy": "Preparado por",
+        "lblTotalOrderAmount": "Importe total del pedido:",
+        "unLockConfirmTitle": "Orden de desbloqueo",
+        "unLockConfirmMsg": "Confirme para desbloquearlo. Las cantidades ingresadas se eliminarán cuando se desbloquee el pedido.",
+        "unLockError": "Error al ejecutar la solicitud de desbloqueo"
+      }
+    },
+    "components": {
+      "searchOrderPopup": {
+        "title": "Búsqueda de pedidos",
+        "noOrderFound": "No se encontró ningún pedido. Intente con un código de barras diferente."
+      },
+      "orderPickingCounter": {
+        "selectQty": "Seleccione Cantidad",
+        "unit": "Unidad (U)",
+        "numeratorDefault": "-",
+        "denoninatorDefault": "--"
+      }
+    }
+  },
+  "inventory": {
+    "title": "Logística",
+    "menuTiles": {
+      "stockCounts": "Recuento de existencias",
+      "labeling": "Etiquetado",
+      "priceChecks": "Control de precios",
+      "markdowns": "Rebajas",
+      "procurement": "Obtención",
+      "receiving": "Recepción",
+      "storage": "Almacenamiento",
+      "stockControl": "Control de existencias",
+      "picking": "Cosecha",
+      "cartonPicking": "Selección de cajas de cartón",
+      "reservePicking": "Recolección de reserva",
+      "shipments": "Envíos",
+      "customerReturns": "Devoluciones de clientes",
+      "supplierReturns": "Devoluciones de proveedores"
+    },
+    "transactions": {
+      "general": "Transacción",
+      "stockCount": "Recuento de existencias",
+      "labelRequest": "Solicitud de etiqueta",
+      "markdown": "Reducción",
+      "receipt": "Recibo",
+      "productRequest": "Solicitud de producto",
+      "stockControl": "Control de existencias",
+      "priceCheck": "Consulta de precios",
+      "preTicket": "Pre-boleto",
+      "counterSale": "Venta de mostrador",
+      "shipment": "Envío",
+      "salesOrder": "Orden de venta"
+    },
+    "status": {
+      "new": "Nuevo",
+      "open": "Abierto",
+      "toPrepare": "Estar preparado",
+      "inProgress": "En curso",
+      "processing": "Tratamiento",
+      "validated": "Validado",
+      "valuating": "Valorando",
+      "completed": "Terminado",
+      "error": "Error"
+    },
+    "traceability": {
+      "notStocked": "No hay existencias",
+      "noControl": "No controlado",
+      "lotControl": "Lote controlado",
+      "lotAndLocation": "Lotes y ubicaciones",
+      "locationOnly": "Almacenado en ubicaciones",
+      "serialControl": "Controlado en serie"
+    },
+    "components": {
+      "downloadView": {
+        "downloadDatabase": "Descargar base de datos",
+        "refreshDatabase": "Actualizar base de datos",
+        "lastUpdate": "Actualizado",
+        "size": "Tamaño",
+        "timeToDownload": "Descargado en %{seconds} segundos",
+        "serverDownloadNotResponding": "La API de descarga del servidor no responde correctamente",
+        "never": "Nunca",
+        "successStatus": "ÉXITO",
+        "failedStatus": "FALLIDO"
+      },
+      "dashboardTotals": {
+        "productCountSingular": "Producto",
+        "productCountPlural": "Productos",
+        "totalCount": "Recuento total",
+        "total": "Total",
+        "totalTTC": "Importe TTC",
+        "labelCount": "Recuento de etiquetas",
+        "supplierDetails": "Detalles del proveedor",
+        "lineCountSingular": "Línea",
+        "lineCountPlural": "Pauta",
+        "orderCountSingular": "licenciado en Derecho",
+        "orderCountPlural": "licenciado en Derecho",
+        "packageCountSingular": "Paquete",
+        "packageCountPlural": "Paquetes",
+        "weight": "Kilogramo",
+        "storedSingular": "almacenado",
+        "storedPlural": "almacenado",
+        "toStore": "almacenar",
+        "notStored": "no almacenado"
+      },
+      "nameInputModal": {
+        "newType": "Nuevo %{type}",
+        "rename": "Rebautizar",
+        "placeholder": "Introduzca un nombre único",
+        "alreadyExists": "'%{name}' ya existe",
+        "buttons": {
+          "positive": "Ahorrar",
+          "negative": "Cancelar"
+        }
+      },
+      "labelFormatSelector": {
+        "labelFormat": "Formato de etiqueta",
+        "selectFormat": "Seleccione un formato"
+      },
+      "markdownReasonSelector": {
+        "markdownReason": "Motivo de la rebaja",
+        "selectReason": "Seleccione un motivo"
+      },
+      "stockCountLocationSelector": {
+        "selectLocation": "Seleccione la ubicación"
+      },
+      "stockCountInventorySelector": {
+        "title": "Inventario",
+        "selectInventory": "Seleccione el inventario"
+      },
+      "stockLocationSelector": {
+        "title": "Ubicación de stock",
+        "allLocations": "Todas las ubicaciones"
+      },
+      "stockCountInventoryList": {
+        "noInventoriesFound": "No existen inventarios"
+      },
+      "stockCountLocationList": {
+        "noLocationsFound": "No hay ubicaciones"
+      },
+      "stockCountProductList": {
+        "noProductsFound": "No hay productos"
+      },
+      "storageUnitList": {
+        "noStorageUnitsFound": "No hay unidades de almacenamiento"
+      },
+      "labelFormatList": {
+        "noLabelFormatsFound": "No hay formatos de etiquetas"
+      },
+      "markdownReasonList": {
+        "noReasonsFound": "No hay motivos de rebajas"
+      },
+      "transactionItem": {
+        "startDate": "Comenzó",
+        "lastDate": "Modificado"
+      },
+      "transactionEntryList": {
+        "defaultTitle": "Entrada de transacción",
+        "scanProduct": "Comience a escanear productos"
+      },
+      "transactionEntryLotList": {
+        "startAdding": "Comience a agregar lotes"
+      },
+      "inventoryProductDetails": {
+        "unknown": "Desconocido",
+        "product": "Producto",
+        "barcode": "Código de barras",
+        "priceHT": "Precio HT",
+        "stockAvailable": "Stock disponible",
+        "expectedStock": "Stock esperado",
+        "lastScan": "Último escaneo",
+        "labelFormat": "Formato de etiqueta",
+        "none": "Ninguno",
+        "traceability": "Trazabilidad",
+        "packageQty": "Cantidad del paquete",
+        "missingProduct": "No se puede encontrar el producto %{code}. Verifique su base de datos sin conexión.",
+        "labelRequest": "Etiqueta"
+      },
+      "inventoryProductLotDetails": {
+        "unknown": "Desconocido",
+        "lot": "Lote",
+        "code": "Número de lote",
+        "refAbbrev": "Árbitro",
+        "reference": "Referencia",
+        "expiryDate": "Fecha de caducidad",
+        "manufacturingDate": "Fecha de fabricación",
+        "bestBeforeDate": "Fecha de caducidad",
+        "blockCode": "Código de bloque",
+        "dangerClass": "Clase de peligro"
+      },
+      "inventoryProductLocationDetails": {
+        "unknown": "Desconocido",
+        "location": "Ubicación",
+        "refLot": "Referencia",
+        "numLot": "Número de lote",
+        "expiryDate": "Fecha de caducidad",
+        "manufacturingDate": "Fecha de fabricación",
+        "bestBeforeDate": "Fecha de caducidad",
+        "blockCode": "Código de bloque"
+      },
+      "inventoryProductReason": {
+        "markdownReason": "Motivo de la rebaja",
+        "deviationReason": "Motivo de la desviación"
+      },
+      "transactionEntryItem": {
+        "unitPrice": "Precio unitario"
+      },
+      "productCounter": {
+        "title": "Cantidad de producto",
+        "placeholder": "Introduzca la cantidad del producto"
+      },
+      "priceChecker": {
+        "title": "Precio del producto",
+        "placeholder": "Introduzca el precio del producto"
+      },
+      "offlineProductList": {
+        "searchPlaceholder": "Buscar o escanear código de barras",
+        "pluralObjectName": "productos"
+      },
+      "offlineLotList": {
+        "searchPlaceholder": "Buscar o escanear producto",
+        "pluralObjectName": "elementos"
+      },
+      "offlineLocationList": {
+        "searchPlaceholder": "Buscar ubicaciones",
+        "pluralObjectName": "Ubicaciones"
+      },
+      "offlineKeyedValueList": {
+        "searchPlaceholder": "Buscar por código o nombre",
+        "clearResults": "Resultados claros"
+      },
+      "conflictHandler": {
+        "warningTitle": "ADVERTENCIA",
+        "anotherEntryExists": "Ya existe otra entrada para el producto '%{code}' y '%{reasonName}'",
+        "howToHandle": "¿Cómo se debe manejar esto?",
+        "merge": "Unir",
+        "replace": "Reemplazar",
+        "mergeInfo": "La fusión combinará las cantidades de esta entrada y la anterior en una sola entrada.",
+        "replaceInfo": "Reemplazar eliminará la entrada anterior y conservará ésta.",
+        "updateConfirmTitle": "Confirmar",
+        "updateConfirmText": "¿Está seguro de que desea realizar %{operation}? Esta operación no se puede deshacer."
+      },
+      "supplierSelector": {
+        "title": "Proveedor",
+        "selectValue": "Seleccione un proveedor"
+      },
+      "locationSelector": {
+        "title": "Ubicación",
+        "selectValue": "Seleccione una ubicación"
+      },
+      "customerSelector": {
+        "title": "Cliente",
+        "selectValue": "Seleccione un cliente"
+      },
+      "carrierSelector": {
+        "title": "Transportador",
+        "selectValue": "Seleccione un transportista"
+      },
+      "routeSelector": {
+        "title": "Ruta",
+        "selectValue": "Seleccione una ruta"
+      },
+      "vehicleTypeSelector": {
+        "title": "Tipo de vehículo",
+        "selectValue": "Seleccione un tipo de vehículo"
+      },
+      "entryPanel": {
+        "clear": "Claro"
+      },
+      "purchaseOrderList": {
+        "noOrdersFound": "No hay órdenes de compra"
+      },
+      "purchaseOrderSelector": {
+        "titleSingular": "Orden de compra",
+        "titlePlural": "Órdenes de compra",
+        "selectOrders": "Seleccionar órdenes de compra"
+      },
+      "inventoryViewProductLink": {
+        "fullDetailsLink": "Haga clic aquí para obtener detalles completos",
+        "productDetailsLink": "Toque aquí para ver los detalles del producto",
+        "productNotFound": "No se puede encontrar el producto %{code}"
+      },
+      "transactionDetailMenu": {
+        "confirmMessage": "¿Estás seguro de que deseas enviar '%{name}'?"
+      },
+      "orderTabView": {
+        "tabs": {
+          "new": "Nuevo",
+          "inProgress": "En curso"
+        }
+      },
+      "orderMemo": {
+        "comments": "Comentarios",
+        "maxSize": "hasta 400 caracteres"
+      },
+      "orderSearch": {
+        "title": "Buscar: %{entity}"
+      },
+      "shipmentItem": {
+        "counterLabel": "licenciado en Derecho"
+      },
+      "shipmentOrderListItem": {
+        "remove": "Eliminar",
+        "removeOrder": "Eliminar pedido",
+        "confirmMessage": "¿Estás seguro de que deseas eliminar '%{name}'?"
+      },
+      "orderItemHeader": {
+        "offlineDataUnavailable": "Datos sin conexión no disponibles"
+      },
+      "shipmentValues": {
+        "driver": "Conductor",
+        "driverPlaceholder": "Introduzca el conductor del transportista",
+        "registration": "Registro",
+        "registrationPlaceholder": "Ingresar al registro"
+      },
+      "stockLocationSelect": {
+        "noLocationsFound": "No se encontraron ubicaciones de stock"
+      },
+      "orderItemStorage": {
+        "stored": "Almacenado"
+      },
+      "receivingOrderList": {
+        "noItemsToDisplay": "No hay recepciones para mostrar"
+      },
+      "searchingForPanel": {
+        "location": "Buscando la ubicación %{location}",
+        "product": "Buscando el producto %{product}",
+        "productAndLot": "Buscando %{lot} para el producto %{product}"
+      },
+      "productLotFilter": {
+        "description": "Filtrar lotes por %{productCode}",
+        "showAll": "Mostrar todos los lotes",
+        "showAtLocation": "Mostrar lotes en %{locationCode}"
+      }
+    },
+    "screens": {
+      "inventorySettings": {
+        "title": "Configuración de transacciones",
+        "transactions": "Actas",
+        "showAll": "Mostrar todo",
+        "hideCompleted": "Ocultar Completado",
+        "stockControlEntries": "Entradas de control de stock",
+        "hideZeroExpected": "Ocultar Cero Esperado"
+      },
+      "transactionCreate": {
+        "errorTitle": "ERROR",
+        "noProductBarcodes": "El producto no está asociado a ningún código de barras, no puedes guardarlo en la solicitud."
+      },
+      "stockCountCreate": {
+        "title": "Nuevo recuento de existencias",
+        "nameTitle": "Nombre",
+        "namePlaceholder": "Introduzca un nombre único",
+        "warningTitle": "ADVERTENCIA",
+        "alreadyExists": "El recuento de existencias '%{name}' ya existe"
+      },
+      "stockCountList": {
+        "title": "Recuento de existencias"
+      },
+      "stockCountDetail": {
+        "title": "Recuento de existencias",
+        "entryTitle": "Entrada de stock",
+        "confirmMessage": "¿Confirmas el recuento?"
+      },
+      "stockCountInventorySelect": {
+        "title": "Ubicación del inventario",
+        "selectInventory": "Seleccione un inventario",
+        "selectLocation": "Seleccione una ubicación"
+      },
+      "stockLocationSelect": {
+        "title": "Ubicación de stock",
+        "selectLocation": "Seleccione una ubicación de stock"
+      },
+      "receivingLocationSelect": {
+        "title": "Ubicación de %{product}",
+        "selectLocation": "Seleccione una nueva ubicación"
+      },
+      "productLocationSelect": {
+        "title": "Ubicación de stock",
+        "selectLocation": "Seleccione una ubicación de stock para %{productCode}"
+      },
+      "stockControlList": {
+        "title": "Control de existencias"
+      },
+      "stockControlCreate": {
+        "title": "Nuevo control de stock",
+        "nameTitle": "Nombre",
+        "namePlaceholder": "Introduzca un nombre único",
+        "warningTitle": "ADVERTENCIA",
+        "alreadyExists": "El control de stock '%{name}' ya existe",
+        "inventoryNoProducts": "El inventario '%{inventory}' no contiene productos para controlar."
+      },
+      "stockControlDetail": {
+        "title": "Control de existencias",
+        "warningTitle": "ADVERTENCIA",
+        "entryTitle": "Entrada de control",
+        "confirmMessage": "¿Confirmas el recuento?",
+        "mustSelectLocation": "Debe seleccionar una ubicación de stock antes de escanear el producto.",
+        "confirmAccept": "Por favor, confirme que desea aceptar el recuento.",
+        "locationUnexpected": "No se espera la ubicación %{locationCode} para %{inventory} pero aún se pueden contar los productos para esta ubicación.",
+        "locationFull": "La ubicación %{locationCode} ya se utiliza para almacenar el producto %{productCode}. No puedes agregar otro producto."
+      },
+      "stockControlEntryDetail": {
+        "title": "Entrada de stock"
+      },
+      "deviationReasonSelect": {
+        "title": "Motivo de la desviación",
+        "selectReason": "Seleccione un motivo",
+        "clearReason": "Claro"
+      },
+      "labelRequestList": {
+        "title": "Etiquetado"
+      },
+      "labelRequestDetail": {
+        "title": "Solicitud de etiqueta",
+        "entryTitle": "Entrada de etiqueta",
+        "selectFormat": "Seleccione un formato antes de escanear"
+      },
+      "labelEntryDetail": {
+        "title": "Entrada de etiqueta"
+      },
+      "labelFormatSelect": {
+        "title": "Formato de etiqueta",
+        "selectFormat": "Seleccione un formato",
+        "clearFormat": "Claro"
+      },
+      "markdownList": {
+        "title": "Rebajas"
+      },
+      "markdownDetail": {
+        "title": "Reducción",
+        "entryTitle": "Entrada de Markdown",
+        "confirmMessage": "¿Estás seguro de que deseas enviar Markdown '%{name}'?",
+        "selectReason": "Seleccione un motivo antes de escanear"
+      },
+      "markdownEntryDetail": {
+        "title": "Entrada de Markdown"
+      },
+      "markdownReasonSelect": {
+        "title": "Motivo de la rebaja",
+        "selectReason": "Seleccione un motivo",
+        "clearReason": "Claro"
+      },
+      "markdownValidate": {
+        "title": "Reducción",
+        "selectStorageUnit": "Seleccione una unidad de almacenamiento",
+        "confirmMessage": "¿Estás seguro de que deseas enviar Markdown '%{name}'?"
+      },
+      "receivingList": {
+        "title": "Recepción",
+        "searchPlaceholder": "Escanee el producto o ingrese el número de recibo"
+      },
+      "receivingSearch": {
+        "defaultTitle": "Recepción"
+      },
+      "receivingOrderDetail": {
+        "command": "recibir",
+        "confirmMessage": "¿Me confirmas el recibo?",
+        "confirmStorage": "¿Me confirmas el almacenamiento?",
+        "memoPlaceholder": "Introduzca comentarios para el recibo"
+      },
+      "receivingOrderValidation": {
+        "title": "Recepción de validación",
+        "deliveryNoteTitle": "Nota de entrega",
+        "deliveryNotePlaceholder": "Introduzca el albarán de entrega suministrado"
+      },
+      "receivingOrderApproval": {
+        "title": "Recibiendo aprobación",
+        "allStored": "¿Consideras almacenados todos los productos de esta recepción?",
+        "generateRequest": "Ha seleccionado %{count} lotes de productos para etiquetar. ¿Desea generar la solicitud?",
+        "generateForAll": "¿Quieres generar una solicitud de etiqueta para todos los productos?"
+      },
+      "storageList": {
+        "title": "Almacenamiento",
+        "tabs": {
+          "receptions": "Recepciones",
+          "locations": "Ubicaciones"
+        }
+      },
+      "deliveryList": {
+        "searchPlaceholder": "Escanee el producto o ingrese el número de picking"
+      },
+      "cartonPickingList": {
+        "searchPlaceholder": "Escanee el producto o ingrese el número de caja",
+        "noItemsToDisplay": "No hay ningún cartón que coincida con tu búsqueda"
+      },
+      "reservePickingList": {
+        "searchPlaceholder": "Escanee el producto o ingrese el número de reserva",
+        "noItemsToDisplay": "Ningún pedido coincide con tu búsqueda"
+      },
+      "categorizedPickingDetail": {
+        "title": {
+          "carton": "Detalle del cartón",
+          "reserve": "Detalle de la reserva"
+        },
+        "extendedHeaderTitle": {
+          "carton": "Caja de cartón",
+          "reserve": "Reservar"
+        }
+      },
+      "deliverySearch": {
+        "defaultTitle": "Cosecha"
+      },
+      "deliveryOrderDetail": {
+        "command": "entregar",
+        "confirmMessage": "¿Me confirmas la entrega?",
+        "memoPlaceholder": "Introduzca comentarios para el orden de selección"
+      },
+      "categorizedPicking": {
+        "command": "preparar",
+        "offlineError": "El pedido no se puede visualizar sin conexión"
+      },
+      "deliveryOrderValidation": {
+        "title": "Validación de selección",
+        "packageCount": "Ingrese el número de paquetes"
+      },
+      "receiptCreate": {
+        "title": "Crear recibo",
+        "heading": "Ingrese el número de envío y seleccione el proveedor para crear un recibo.",
+        "editTitle": "Editar recibo",
+        "detailsTitle": "Detalles del proveedor",
+        "shipmentNoteTitle": "Número de envío",
+        "shipmentNotePlaceHolder": "Introduzca el número de envío"
+      },
+      "receiptDetail": {
+        "title": "Recibo",
+        "confirmMessage": "¿Está seguro de que desea enviar el recibo '%{name}'?"
+      },
+      "receiptEntryDetail": {
+        "title": "Entrada de recibo"
+      },
+      "productRequestList": {
+        "title": "Solicitudes de productos"
+      },
+      "productRequestDetail": {
+        "title": "Solicitud de producto",
+        "confirmMessage": "¿Está seguro de que desea enviar la solicitud de producto '%{name}'?",
+        "entryTitle": "Solicitud de entrada"
+      },
+      "priceCheckList": {
+        "title": "Control de precios"
+      },
+      "priceCheckDetail": {
+        "title": "Consulta de precios",
+        "confirmMessage": "¿Está seguro de que desea enviar la verificación de precio '%{name}'?"
+      },
+      "priceCheckEntryDetail": {
+        "title": "Entrada de verificación de precio",
+        "printLabel": "Etiqueta de impresión"
+      },
+      "transactionList": {
+        "title": "Actas"
+      },
+      "offlineProductList": {
+        "title": "Productos"
+      },
+      "offlineLotList": {
+        "title": "Lotes de productos"
+      },
+      "offlineLocationList": {
+        "title": "Ubicaciones de productos"
+      },
+      "customDetail": {
+        "confirmMessage": "¿Está seguro de que desea enviar %{typename} '%{name}'?"
+      },
+      "addProduct": {
+        "title": "Búsqueda de productos",
+        "unsupportedBarcode": "El código de barras %{barcode} no es compatible. No se puede agregar este producto."
+      },
+      "addProductLot": {
+        "title": "Lotes para %{productCode}"
+      },
+      "createLot": {
+        "title": "Crear lote",
+        "createNew": "¿Desea crear un nuevo lote para el producto %{productCode}?",
+        "referencePlaceholder": "Introduzca una referencia de lote única",
+        "mustOccurBefore": "%{firstDate} debe ocurrir antes de %{secondDate}"
+      },
+      "purchaseOrderSelect": {
+        "title": "Órdenes de compra"
+      },
+      "supplierDetail": {
+        "title": "Proveedor",
+        "purchaseOrders": "Órdenes de compra"
+      },
+      "stockCountInventoryList": {
+        "title": "Inventarios",
+        "locationsTitle": "Ubicaciones",
+        "productsTitle": "Productos"
+      },
+      "receivingFilter": {
+        "title": "Filtrar por",
+        "purchaseOrder": "Orden de compra",
+        "purchaseOrderPlaceholder": "Ingresar un pedido existente",
+        "receiptDate": "Fecha de recibo",
+        "deliveryDate": "Entrega programada",
+        "clearFilter": "Limpiar filtro"
+      },
+      "storageFilter": {
+        "title": "Filtrar por",
+        "product": "Producto",
+        "productPlaceholder": "Introducir producto",
+        "clearFilter": "Limpiar filtro"
+      },
+      "deliveryFilter": {
+        "title": "Filtrar por",
+        "salesOrder": "Orden de venta",
+        "salesOrderPlaceholder": "Ingresar un pedido existente",
+        "orderDate": "Fecha de pedido",
+        "shipmentDate": "Envío programado"
+      },
+      "shipmentList": {
+        "title": "Envíos"
+      },
+      "shipmentDetail": {
+        "title": "Envío",
+        "listEmpty": "Comience a agregar órdenes de recolección"
+      },
+      "shipmentOrderSelect": {
+        "title": "Órdenes de envío",
+        "searchIndicator": "Buscando '%{searchKey}'"
+      },
+      "shipmentValidation": {
+        "title": "Validación de envío"
+      },
+      "customerReturnList": {
+        "title": "Devoluciones de clientes",
+        "searchPlaceholder": "Escanee el producto o ingrese el número de devolución"
+      },
+      "customerReturnSearch": {
+        "defaultTitle": "Devoluciones de clientes"
+      },
+      "customerReturnDetail": {
+        "command": "devolver",
+        "confirmMessage": "¿Me confirmas la devolución?",
+        "memoPlaceholder": "Introduzca comentarios para la devolución"
+      },
+      "customerReturnValidation": {
+        "title": "Validación de devolución",
+        "deliveryNoteTitle": "Nota de entrega",
+        "deliveryNotePlaceholder": "Introduzca el albarán de entrega suministrado"
+      },
+      "customerReturnFilter": {
+        "title": "Filtrar por",
+        "returnDate": "Fecha de regreso"
+      },
+      "supplierReturnList": {
+        "title": "Devoluciones de proveedores",
+        "searchPlaceholder": "Escanee el producto o ingrese el número de devolución"
+      },
+      "supplierReturnSearch": {
+        "defaultTitle": "Devoluciones de proveedores"
+      },
+      "supplierReturnDetail": {
+        "command": "devolver",
+        "confirmMessage": "¿Me confirmas la devolución?",
+        "memoPlaceholder": "Introduzca comentarios para la devolución"
+      },
+      "supplierReturnValidation": {
+        "title": "Validación de devolución",
+        "packageCount": "Ingrese el número de paquetes"
+      },
+      "supplierReturnFilter": {
+        "title": "Filtrar por",
+        "returnDate": "Fecha de regreso"
+      },
+      "storageValidation": {
+        "title": "Validación de almacenamiento",
+        "confirmStorage": "¿Me confirmas el almacenamiento?"
+      }
+    },
+    "tapPlusEmptyText": {
+      "untyped": "Toque + para agregar",
+      "general": "Toque + para agregar un nuevo %{typename}",
+      "stockCount": "Seleccione + para iniciar un nuevo conteo",
+      "labelRequest": "Seleccione + para crear una nueva solicitud de etiqueta",
+      "markdown": "Seleccione + para crear un nuevo Markdown",
+      "productRequest": "Seleccione + para crear una nueva solicitud de aprobación",
+      "shipment": "Seleccione + para crear un nuevo envío"
+    },
+    "noIncompleteTransactions": {
+      "untyped": "No hay transacciones incompletas",
+      "typed": "No hay transacciones %{typename} incompletas"
+    },
+    "noItemsToDisplay": "No hay elementos para mostrar",
+    "noItemsMatchSearch": "No hay artículos que coincidan con tu búsqueda",
+    "invalidBarcodeForXact": "Esta transacción está completa y no se pueden aceptar productos adicionales."
+  },
+  "sales": {
+    "title": "Ventas",
+    "menuTiles": {
+      "customers": "Clientes",
+      "preTickets": "Entradas anticipadas",
+      "checkout": "Verificar",
+      "dashboard": "Panel",
+      "counterSales": "Órdenes de venta"
+    },
+    "screens": {
+      "preTicketList": {
+        "title": "Entradas anticipadas"
+      },
+      "preTicketDetail": {
+        "title": "Pre-boleto"
+      },
+      "preTicketEntryDetail": {
+        "title": "Entrada con antelación"
+      },
+      "checkout": {
+        "title": "Verificar"
+      },
+      "checkoutItemDetail": {
+        "title": "Línea de boletos"
+      },
+      "dashboard": {
+        "title": "Panel"
+      },
+      "salesOrderList": {
+        "title": "Órdenes de venta",
+        "searchPlaceholder": "Escanee el producto o ingrese el número de pedido"
+      },
+      "salesFilter": {
+        "title": "Filtrar por",
+        "orderDate": "Fecha de pedido"
+      },
+      "salesOrderDetail": {
+        "newTitle": "Orden %{key}",
+        "entryTitle": "Entrada de venta",
+        "command": "vender",
+        "confirmValorise": "¿Desea valorar los artículos en venta?",
+        "deleteOrderError": "Error al eliminar la orden de venta %{message}",
+        "valorise": "Valorar"
+      },
+      "salesOrderMemo": {
+        "placeholder": "Introduzca comentarios para la venta"
+      },
+      "salesOrderValidation": {
+        "title": "Validación de venta en mostrador",
+        "confirmSubmit": "¿Me confirmas la venta?",
+        "packageCount": "Ingrese el número de paquetes",
+        "driver": "Conductor",
+        "driverPlaceholder": "Introduzca el conductor del transportista",
+        "registration": "Registro",
+        "registrationPlaceholder": "Ingresar al registro"
+      },
+      "customerList": {
+        "searchPrompt": "Búsqueda de clientes"
+      },
+      "customerDetail": {
+        "title": "Perfil del cliente"
+      }
+    },
+    "components": {
+      "checkoutGrid": {
+        "add": "Agregar",
+        "customer": "Cliente",
+        "discount": "Descuento",
+        "payment": "Pago"
+      },
+      "checkoutItemDetails": {
+        "product": "Producto",
+        "unitPrice": "Precio unitario"
+      },
+      "checkoutTicketHeader": {
+        "tapCustomer": "Toque \"Cliente\" para agregarlo al ticket"
+      },
+      "checkoutTicketList": {
+        "scanProduct": "Comience a escanear productos"
+      },
+      "salesOrderList": {
+        "selectCustomer": "Seleccione un cliente",
+        "confirmTitle": "Nuevo orden",
+        "confirmMessage": "¿Confirmas la creación del pedido para '%{name}'?",
+        "createOrderError": "Error al crear orden de venta %{message}"
+      },
+      "customerTabView": {
+        "routes": {
+          "profile": "Perfil",
+          "orders": "Pedidos",
+          "history": "Historia"
+        }
+      }
+    }
+  },
+  "reference": {
+    "title": "Referencia",
+    "menuTiles": {
+      "products": "Productos",
+      "lots": "Lotes",
+      "locations": "Ubicaciones",
+      "suppliers": "Proveedores",
+      "customers": "Clientes",
+      "carriers": "Transportistas",
+      "routes": "Rutas",
+      "vehicleTypes": "Tipos de vehículos",
+      "inventories": "Inventarios",
+      "transactions": "Actas"
+    }
+  },
+  "screens": {
+    "settings": {
+      "title": "Ajustes",
+      "shortTitle": "Ajustes",
+      "menuItems": {
+        "general": "General",
+        "database": "Base de datos",
+        "inventory": "Actas",
+        "scanning": "Exploración",
+        "printers": "Impresoras",
+        "about": "Acerca de",
+        "permissions": "Permisos",
+        "signOut": "Desconectar"
+      },
+      "chooseEntity": "Elija una entidad"
+    },
+    "generalSettings": {
+      "title": "General"
+    },
+    "databaseSettings": {
+      "title": "Base de datos"
+    },
+    "scanningSettings": {
+      "title": "Exploración",
+      "menuItems": {
+        "general": "Configuración",
+        "dataWedge": "cuña de datos",
+        "testing": "Prueba de escaneo"
+      }
+    },
+    "scanningConfig": {
+      "title": "Configuración",
+      "camera": "Cámara",
+      "unitech2D": "Generador de imágenes 2D Unitech",
+      "unitechBluetooth": "Bluetooth de Unitech",
+      "dataWedge": "Cuña de datos de cebra"
+    },
+    "scanTesting": {
+      "title": "Prueba de escaneo",
+      "simulated": "Simulado",
+      "lastBarcodeType": "Último tipo de código de barras",
+      "lastScan": "Último escaneo",
+      "lastGTIN": "Último GTIN",
+      "lastLot": "Último lote",
+      "lastSerialNumber": "Último número de serie",
+      "lastProductionDate": "Última fecha de producción",
+      "lastBestBeforeDate": "Fecha de caducidad",
+      "lastExpiryDate": "Última fecha de caducidad"
+    },
+    "about": {
+      "title": "Acerca de",
+      "user": "Usuario",
+      "device": "Dispositivo",
+      "middleware": "Software intermedio",
+      "application": "Solicitud",
+      "copyright": "©2024 Aurea Venta al por menor",
+      "copyright2": "Aurea es una empresa del grupo ESW Capital",
+      "unknown": "Desconocido",
+      "system": "El sistema es %{system}",
+      "currentStatus": "El estado actual es %{status}",
+      "interval": "Comprobando cada %{interval} segundos",
+      "screen": "La pantalla es",
+      "validate": "Validar middleware"
+    },
+    "permissions": {
+      "title": "Permisos",
+      "summary": "Aquí puedes otorgar o denegar los permisos que %{appName} tiene para acceder a tus datos",
+      "results": {
+        "unavailable": "Indisponible",
+        "available": "Disponible",
+        "granted": "Otorgada",
+        "denied": "Denegado"
+      },
+      "types": {
+        "camera": {
+          "name": "Cámara",
+          "description": "%{appName} usa su cámara para escanear códigos de barras"
+        },
+        "bluetooth": {
+          "name": "Bluetooth",
+          "description": "%{appName} usa Bluetooth para conectarse a dispositivos de escaneo de códigos de barras e impresoras"
+        }
+      }
+    },
+    "printerSettings": {
+      "title": "Impresoras"
+    },
+    "getStarted": {
+      "letsGetStarted": "Empecemos"
+    },
+    "enterUrl": {
+      "signIn": "Iniciar sesión",
+      "enterYourSystemUrl": "Ingrese la URL de su sistema"
+    },
+    "login": {
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "failedToConnect": "No se pudo conectar",
+      "failedToSignOut": "No se pudo cerrar sesión",
+      "invalidCredentials": "Credenciales inválidas"
+    },
+    "signIn": {
+      "username": "Nombre de usuario",
+      "password": "Contraseña"
+    },
+    "auth": {
+      "signIn": "Iniciar sesión en %{system}",
+      "enterYourCredentials": "Ingresa tus credenciales",
+      "failedToConnect": "No se pudo conectar",
+      "switchSystems": "Toque aquí para cambiar de sistema",
+      "singleEntityName": "Générix (monoentidad)"
+    },
+    "entity": {
+      "selectEntity": "Seleccionar entidad",
+      "entity": "Entidad",
+      "noEntitiesFound": "No se encontraron entidades",
+      "entityName": "Nombre de la entidad",
+      "searchPlaceholder": "Buscar por nombre o código"
+    },
+    "sortOptions": {
+      "title": "Ordenar por",
+      "listedAToZ": "Listado de la A a la Z",
+      "listedZToA": "Listado de la Z a la A",
+      "highestFirst": "Lo más alto primero",
+      "lowestFirst": "Lo más bajo primero",
+      "latestFirst": "Lo último primero",
+      "earliestFirst": "Lo más temprano primero",
+      "lastScan": "Último escaneo",
+      "barcode": "Código de barras",
+      "product": "Código del producto",
+      "reception": "Recibo",
+      "receiptDate": "Fecha de recibo",
+      "delivery": "Orden de selección",
+      "deliveryCarton": "Caja de cartón",
+      "deliveryReserveOrder": "Orden de reserva",
+      "deliveryDate": "Entrega programada",
+      "supplier": "Identificación del proveedor",
+      "supplierName": "Nombre del proveedor",
+      "supplierRef": "Referencia del proveedor",
+      "shipmentDate": "Fecha de envío",
+      "customer": "Identificación del cliente",
+      "customerName": "Nombre del cliente",
+      "carrier": "Transportador",
+      "route": "Ruta",
+      "salesOrder": "Orden de venta",
+      "orderDate": "Fecha de pedido",
+      "return": "Devolver",
+      "returnDate": "Fecha de regreso",
+      "location": "Ubicación",
+      "lineNumber": "Número de línea"
+    },
+    "printerSelect": {
+      "title": "Impresora %{name}",
+      "selectPrinter": "Seleccione una impresora"
+    },
+    "routeFormatSelect": {
+      "title": "Rutas",
+      "selectRoute": "Seleccione una ruta"
+    },
+    "barcodeSelector": {
+      "title": "Códigos de barras de productos",
+      "selectFormat": "Seleccione un código de barras"
+    },
+    "kioskMain": {
+      "scanBarcode": "Escanee un código de barras para obtener el precio",
+      "productNotFound": "Producto no encontrado"
+    }
+  },
+  "components": {
+    "offlineDatabaseDetails": {
+      "entry": {
+        "zero": "Cero entradas",
+        "one": "1 entrada",
+        "other": "%{formattedCount} entradas"
+      },
+      "noTablesFound": "No hay tablas en la base de datos.",
+      "title": "Datos locales"
+    },
+    "logoHeader": {
+      "online": "En línea",
+      "offline": "Desconectado",
+      "connected": "Conectado",
+      "saveButton": "Ahorrar",
+      "selectButton": "Seleccionar"
+    },
+    "clearableUrlInput": {
+      "exampleUrl": "https://aurearetail.com"
+    },
+    "printerView": {
+      "shipment": {
+        "title": "Etiquetas de envío",
+        "copies": "Copias"
+      },
+      "transport": {
+        "title": "Etiquetas de transporte",
+        "copies": "Copias"
+      }
+    },
+    "flyerMenu": {
+      "action": "Comportamiento",
+      "next": "Próximo",
+      "previous": "Anterior",
+      "print": "Imprimir",
+      "sort": "Clasificar",
+      "sorted": "Ordenado",
+      "filter": "Filtrar",
+      "filtered": "Filtrado",
+      "approve": "Aprobar",
+      "add": "Agregar",
+      "lock": "Cerrar",
+      "unlock": "Descubrir",
+      "validate": "Validar",
+      "create": "Crear",
+      "confirm": "Confirmar",
+      "save": "Ahorrar",
+      "submit": "Entregar",
+      "details": "Detalles",
+      "reopen": "Reabrir",
+      "new": "Nuevo",
+      "delete": "Borrar",
+      "retry": "Rever",
+      "clear": "Claro"
+    },
+    "inventoryActionSheet": {
+      "title": "Seleccione una acción",
+      "titleAlt": "Seleccione una transacción para crear",
+      "new": "Nuevo",
+      "newVowel": "Nuevo",
+      "newFeminine": "Nuevo"
+    },
+    "customerActionSheet": {
+      "title": "Seleccione una acción",
+      "options": {
+        "updateProfile": "Actualización de perfil",
+        "newOrder": "Nuevo orden",
+        "notify": "Notificación VIP"
+      },
+      "notify": {
+        "message": "'%{user}' informó que el cliente VIP '%{customer}' está visitando actualmente la ubicación '%{entity}'"
+      }
+    },
+    "counter": {
+      "buttons": {
+        "save": "Ahorrar",
+        "cancel": "Cancelar"
+      }
+    },
+    "printerList": {
+      "noPrintersFound": "No hay impresoras"
+    },
+    "routeList": {
+      "noRoutesFound": "No hay rutas"
+    },
+    "routeSelector": {
+      "title": "Ruta",
+      "selectRoute": "Seleccione una ruta"
+    },
+    "printerSelector": {
+      "selectPrinter": "Seleccione una impresora",
+      "printers": {
+        "shipment": "Envío",
+        "transport": "Transporte"
+      }
+    },
+    "barcodeSelector": {
+      "title": "Código de barras",
+      "selectFormat": "Seleccione un código de barras"
+    },
+    "customTextField": {
+      "invalidEntry": "Entrada no válida"
+    },
+    "backgroundTaskInterval": {
+      "title": "Tareas en segundo plano",
+      "description": "¿Con qué frecuencia deben ejecutarse las tareas en segundo plano?",
+      "units": "Minutos (5-60)",
+      "invalidEntry": "Entrada no válida (5-60)"
+    },
+    "displayMode": {
+      "title": "Modo de visualización",
+      "full": "Lleno",
+      "compact": "Compacto"
+    },
+    "barcodeSimulator": {
+      "simulator": "Habilitar simulador",
+      "enterBarcode": "Introducir código de barras"
+    },
+    "offlineListHeading": {
+      "resultLimit": "Resultados limitados a %{count} %{pluralObjectName}",
+      "noResult": "No hay %{pluralObjectName} que coincida con tu búsqueda",
+      "noneAvailable": "No hay %{pluralObjectName} disponibles"
+    },
+    "connectionDisplay": {
+      "label": "La red es",
+      "types": {
+        "unknown": "Desconocido",
+        "wifi": "wifi",
+        "ethernet": "Ethernet",
+        "cellular": "Celular",
+        "wimax": "WiMAX",
+        "vpn": "VPN"
+      }
+    },
+    "orderInfoHeader": {
+      "itemsTo": "elementos a %{command}",
+      "itemTo": "elemento a %{command}",
+      "productsTo": "productos a %{command}",
+      "productTo": "producto a %{command}",
+      "receiptCompleted": "Este recibo está completo",
+      "pickingCompleted": "Esta recolección está completa",
+      "submissionError": "Error %{tipo de pedido}"
+    },
+    "orderItemCounter": {
+      "selectQty": "Seleccione Cantidad",
+      "unit": "Unidad (U)",
+      "numeratorDefault": "-",
+      "denoninatorDefault": "--"
+    },
+    "orderInfo": {
+      "orderInfoTitle": "Evento de origen",
+      "unknown": "Desconocido",
+      "orderedBy": "Ordenado por",
+      "orderedTo": "Ordenado a",
+      "deliveredBy": "Entregado por",
+      "deliveredTo": "Entregado a",
+      "supplier": "Proveedor",
+      "customer": "Cliente",
+      "reference": "Referencia",
+      "orderUnknown": "Orden desconocida",
+      "orderDateUnknown": "Fecha desconocida",
+      "deliveryDate": "Fecha de entrega",
+      "carrierName": "Nombre del transportista",
+      "receivedBy": "Recibido por",
+      "preparedBy": "Preparado por"
+    },
+    "transactionLifespan": {
+      "title": "Duración de la transacción",
+      "description": "Periodo durante el cual se conservan las transacciones cerradas antes de su eliminación automática",
+      "units": "Días",
+      "deleteNowLink": "Haga clic aquí para eliminar ahora",
+      "deleteConfirmTitle": "Eliminar ahora",
+      "deleteConfirmText": "¿Está seguro de que desea eliminar todas las transacciones cerradas?"
+    },
+    "clearCache": {
+      "title": "Cachés de aplicaciones",
+      "deleteSettingsCache": "Toque aquí para borrar la caché de configuración",
+      "deleteDataCache": "Toque aquí para borrar la caché de datos",
+      "deleteConfirmTitle": "Borrar caché",
+      "confirmSettingsCacheDelete": "¿Está seguro de que desea borrar la caché de configuración?",
+      "confirmDataCacheDelete": "¿Está seguro de que desea borrar la memoria caché de datos?"
+    },
+    "productDetail": {
+      "tabs": {
+        "main": "Principal",
+        "stock": "Existencias",
+        "custom": "Costumbre",
+        "substitutes": "Sustitutos"
+      }
+    },
+    "numberInputCounter": {
+      "warningTitle": "ADVERTENCIA",
+      "cannotAdd": "No es posible incrementar el recuento de este producto."
+    }
+  },
+  "errors": {
+    "invalidApiPath": "Esta aplicación tiene una ruta de API no válida. Comuníquese con un administrador.",
+    "invalidDownloadPath": "Esta aplicación tiene una ruta de descarga de producto no válida. Comuníquese con un administrador.",
+    "serverNotResponding": "El servidor no responde correctamente",
+    "unableToConnectToServer": "No se puede conectar al servidor",
+    "unauthorizedAccess": "Acceso no autorizado al servidor",
+    "unauthorizedSignOff": "Se ha cerrado la sesión debido a un acceso no autorizado",
+    "displayErrorTitle": "ADVERTENCIA",
+    "receivingError": "Error de recepción (%{orderKey}): %{message}",
+    "deliveryError": "Error de selección (%{orderKey}): %{message}",
+    "returnError": "Error de retorno (%{orderKey}): %{message}",
+    "counterSalesError": "Error de venta en mostrador (%{orderKey}): %{message}",
+    "productNotPartOfReceipt": "El producto escaneado no está incluido en este recibo.",
+    "productNotPartOfDelivery": "El producto escaneado no está incluido en esta orden de picking.",
+    "productNotPartOfReturn": "El producto escaneado no está incluido en esta devolución.",
+    "productLotCannotBeProcessed": "El producto (%{productCode}) lote (%{lot}) no se puede procesar aquí",
+    "productCannotBeProcessed": "El producto %{productCode} no se puede procesar aquí",
+    "cannotExecuteServerNotResponding": "No se puede ejecutar %{operation} porque el servidor no responde",
+    "offlineProductDataUnavailable": "Los datos de los productos sin conexión no están disponibles",
+    "productNotExpected": "No se espera que el producto %{productCode} se almacene en la ubicación %{locationCode}.",
+    "locationInvalid": "La ubicación %{locationCode} no es válida para %{object}.",
+    "locationCannotBeLocated": "La ubicación %{location} no se puede localizar en el sistema.",
+    "barcodeCannotBeLocated": "No se puede encontrar el código de barras %{barcode} en el sistema.",
+    "invalidBarcode": "Código de barras no válido encontrado"
+  },
+  "barcodeNotFound": "Código de barras no encontrado",
+  "unknownProduct": "producto desconocido",
+  "selectProduct": "Por favor seleccione el producto",
+  "matchBarcode": "Coincidir con el código de barras"
+}
